@@ -3,8 +3,8 @@
 Writing film recipes into a camera's custom setting slots (C1–C7) over a cable,
 and reading them back.
 
-**Body:** GFX100RF · **Hosts:** macOS 26, iOS 26 (ImageCaptureCore) · **Notes
-current as of** 2026-08
+Body: GFX100RF · Hosts: macOS 26, iOS 26 (ImageCaptureCore) · Notes
+current as of 2026-08
 
 ## Contents
 
@@ -25,10 +25,10 @@ current as of** 2026-08
 
 | Mark | Means |
 |---|---|
-| **measured** | Verified on a GFX100RF |
-| **community** | From other projects, credited in §10; `×4` is the number agreeing |
-| **weak** | Single source |
-| **disputed** | Sources disagree; both readings given |
+| measured | Verified on a GFX100RF |
+| community | From other projects, credited in §10; `×4` is the number agreeing |
+| weak | Single source |
+| disputed | Sources disagree; both readings given |
 
 ---
 
@@ -38,11 +38,11 @@ current as of** 2026-08
 
 The camera holds the picture settings twice over:
 
-- **Live settings** — what the camera is set to right now. One set.
-- **Stored slots** — seven independent copies, C1 through C7, each a full mirror
+- Live settings — what the camera is set to right now. One set.
+- Stored slots — seven independent copies, C1 through C7, each a full mirror
   of the same settings.
 
-They are reached through **different property codes**. Writing a live register
+They are reached through different property codes. Writing a live register
 while the body is showing C4 does not edit C4.
 
 ### The cursor
@@ -57,10 +57,10 @@ write 0xD18C = 6        # point at C6
 read  0xD192            # C6's film simulation, not C4's
 ```
 
-The cursor is **stateful and sticky**: its value survives closing the session
+The cursor is stateful and sticky: its value survives closing the session
 and unplugging the cable, and once written the register reports that value
 rather than the slot the body is actually on. Changing the C slot on the body
-resets it. **measured**
+resets it. measured
 
 ### The other path to a slot
 
@@ -79,23 +79,23 @@ whichever slot it is showing. So a slot can be written two ways:
 ### Connection mode changes what exists
 
 `CONNECTION MODE` in the camera menu changes the advertised property list
-completely. **measured**
+completely. measured
 
 | Mode | Properties advertised | Live settings | Slot block |
 |---|---|---|---|
 | USB CARD READER | 5 | no | no |
-| USB TETHER SHOOTING | 286 | yes | **present but not advertised** |
-| USB RAW CONV. | 61 | no | **yes** |
+| USB TETHER SHOOTING | 286 | yes | present but not advertised |
+| USB RAW CONV. | 61 | no | yes |
 
 ### Host changes what gets through
 
 macOS and iOS both use ImageCaptureCore and `requestSendPTPCommand`, and differ
-on properties the camera never advertised. **measured**
+on properties the camera never advertised. measured
 
 | | Unadvertised property |
 |---|---|
-| **macOS** | forwarded to the camera |
-| **iOS** | refused with `0x200A` |
+| macOS | forwarded to the camera |
+| iOS | refused with `0x200A` |
 
 This applies to the advertised list as a whole, not to the slot block
 specifically: `0xD18D` is advertised in tethered mode and writes fine from an
@@ -138,11 +138,11 @@ it is showing if `CUSTOM SETTING AUTO UPDATE` is on.
 
 ### Name a slot
 
-`0xD18D` is a PTP string and writes to **wherever the cursor points**. Naming
+`0xD18D` is a PTP string and writes to wherever the cursor points. Naming
 without having just set the cursor puts the name on an unpredictable slot,
 because of the stickiness described in §2. Roughly 10 characters survive,
 spaces included; the camera truncates longer names silently, so read back to see
-what it kept. **measured**
+what it kept. measured
 
 ---
 
@@ -225,7 +225,7 @@ same order, which is why a mapping table is needed rather than an offset.
 
 Ranges: highlight and shadow tone −2…+4 with half steps allowed (`+1.5` is raw
 `15`), colour and sharpness −4…+4, clarity −5…+5, WB shift −9…+9, monochromatic
-axes −18…+18. **community**
+axes −18…+18. community
 
 ### 6.2 Enumerations
 
@@ -243,7 +243,7 @@ axes −18…+18. **community**
 Sign is not derivable from the code. Reading unsigned where the camera meant
 signed turns −20 into 65516 — a write that worked, reported as a failure.
 
-**INT16:** `0x5015` · `0xD008` · `0xD00B` · `0xD00C` · `0xD031` · `0xD032` ·
+INT16: `0x5015` · `0xD008` · `0xD00B` · `0xD00C` · `0xD031` · `0xD032` ·
 `0xD043` · `0xD104` · `0xD320` · `0xD321` · and the slot twins `0xD193` `0xD194`
 `0xD19A` `0xD19B` `0xD19D` `0xD19E` `0xD19F` `0xD1A0` `0xD1A2`
 
@@ -263,7 +263,7 @@ block is UINT16. That is why this has to be a lookup table and cannot be a rule.
 | 0 | `0x2000` | | |
 
 `+2` is zero and `0` is `0x2000`, so storing a plain menu number here writes the
-wrong strength and reports success. **community**
+wrong strength and reports success. community
 
 ---
 
@@ -273,9 +273,9 @@ wrong strength and reports success. **community**
 
 | Rule | Why |
 |---|---|
-| Film simulation **first** | Changing it resets tone and colour on the body, silently undoing anything written before it |
-| D-Range priority **off before** tone curves | While on, highlight and shadow are refused outright |
-| WB mode **before** kelvin | `0xD017` / `0xD19C` mean nothing until the mode is colour temperature |
+| Film simulation first | Changing it resets tone and colour on the body, silently undoing anything written before it |
+| D-Range priority off before tone curves | While on, highlight and shadow are refused outright |
+| WB mode before kelvin | `0xD017` / `0xD19C` mean nothing until the mode is colour temperature |
 
 ### Conditional availability
 
@@ -293,7 +293,7 @@ wrong strength and reports success. **community**
 | Code | Name | Means here | Do this |
 |---|---|---|---|
 | `0x200A` | DevicePropNotSupported | The property is not in the camera's advertised list, and the host will not forward it | Change `CONNECTION MODE` — §3 |
-| `0x201C` | InvalidDevicePropValue | Value out of range, **or** the setting is disabled by another setting | Check §7. For clarity, switch the format to JPEG |
+| `0x201C` | InvalidDevicePropValue | Value out of range, or the setting is disabled by another setting | Check §7. For clarity, switch the format to JPEG |
 | `0x2002` | InvalidObjectHandle | Seen from `GetDevicePropDesc` in RAW CONV mode; `GetDevicePropValue` still works | Read the value, skip the description |
 | `0xA001` | Vendor-specific | Seen when probing name length | Shorten the string |
 
@@ -306,10 +306,10 @@ is not a failure — it is §6.3.
 
 Not achievable over the cable:
 
-- **Changing which slot the camera is using.** `0xD18C` moves the editing
+- Changing which slot the camera is using. `0xD18C` moves the editing
   cursor, not the body's selection.
-- **ISO and exposure compensation.** Physical dials.
-- **Reading which slot the body is on**, once anything has been written to
+- ISO and exposure compensation. Physical dials.
+- Reading which slot the body is on, once anything has been written to
   `0xD18C`.
 
 ---
@@ -323,13 +323,13 @@ Not achievable over the cable:
 | [KyleOndy/dotfiles](https://github.com/KyleOndy/dotfiles) | X-T5 | Long exposure NR inversion |
 | p5k369/grawji | — | Monochromatic gating |
 
-**Disagreement.** `0xD1A4` measured as JPEG/HEIF select here; filmkit reports
+Disagreement. `0xD1A4` measured as JPEG/HEIF select here; filmkit reports
 colour space (1 = sRGB) on an X100VI. Not written by this project either way.
 
-**Do not use** `aradotso/trending-skills` — its table for this block is shifted by
+Do not use `aradotso/trending-skills` — its table for this block is shifted by
 several addresses (film simulation at `0xD18E`, white balance at `0xD191`).
 
-**Not covered anywhere:** libgphoto2 names nothing between `0xD188` and `0xD1FF`,
+Not covered anywhere: libgphoto2 names nothing between `0xD188` and `0xD1FF`,
 and Fujifilm's Camera Control SDK carries no PTP property codes at all.
 
-**Unidentified:** `0xD1A5`, which reads 7 everywhere.
+Unidentified: `0xD1A5`, which reads 7 everywhere.
