@@ -23,15 +23,11 @@ current as of** 2026-08
 
 ## 1. Confidence
 
-Every claim below carries one of these. They are not decoration: two registers
-are named differently by different projects, and the reader needs to know which
-kind of statement they are looking at.
-
 | Mark | Means |
 |---|---|
-| **measured** | Established on a GFX100RF: value written, read back, and confirmed against the camera's own menu |
-| **community** | From someone else's reverse engineering, credited in §10. A count (`×4`) is the number of independent projects agreeing |
-| **weak** | One source, or a source that observed only one value |
+| **measured** | Verified on a GFX100RF |
+| **community** | From other projects, credited in §10; `×4` is the number agreeing |
+| **weak** | Single source |
 | **disputed** | Sources disagree; both readings given |
 
 ---
@@ -47,8 +43,7 @@ The camera holds the picture settings twice over:
   of the same settings.
 
 They are reached through **different property codes**. Writing a live register
-while the body is showing C4 does not edit C4. This is the single fact that
-makes everything else necessary.
+while the body is showing C4 does not edit C4.
 
 ### The cursor
 
@@ -102,11 +97,9 @@ on properties the camera never advertised. **measured**
 | **macOS** | forwarded to the camera |
 | **iOS** | refused with `0x200A` |
 
-The evidence that this is about the advertised list rather than the slot block
-specifically: `0xD18D` **is** advertised in tethered mode and writes fine from an
-iPhone, while `0xD192` — same block, same session — returns `0x200A`. Whether
-the refusal originates on the phone or at the camera was not established; that
-needs a USB capture between the two.
+This applies to the advertised list as a whole, not to the slot block
+specifically: `0xD18D` is advertised in tethered mode and writes fine from an
+iPhone, while `0xD192` in the same block returns `0x200A`.
 
 ### Which mode to use
 
@@ -323,41 +316,20 @@ Not achievable over the cable:
 
 ## 10. Provenance
 
-### Sources
+| Project | Body | Contributes |
+|---|---|---|
+| [eggricesoy/filmkit](https://github.com/eggricesoy/filmkit) | X100VI | `0xD18E` `0xD18F` `0xD193` `0xD194` `0xD197` `0xD198` `0xD1A3` |
+| [gosku/Filmcase](https://github.com/gosku/Filmcase) | X-S10 | `0xD191` values, `0xD1A1` table, ranges |
+| [KyleOndy/dotfiles](https://github.com/KyleOndy/dotfiles) | X-T5 | Long exposure NR inversion |
+| p5k369/grawji | — | Monochromatic gating |
 
-| Project | Body | Method | Used here for |
-|---|---|---|---|
-| [eggricesoy/filmkit](https://github.com/eggricesoy/filmkit) | X100VI | Wireshark captures of Fujifilm's X RAW Studio | `0xD18E` `0xD18F` `0xD193` `0xD194` `0xD197` `0xD198` `0xD1A3` |
-| [gosku/Filmcase](https://github.com/gosku/Filmcase) | X-S10 | Property probing, named after the official SDK | `0xD191` values, `0xD1A1` table, ranges |
-| [KyleOndy/dotfiles](https://github.com/KyleOndy/dotfiles) | X-T5 | Backup blob format | Long exposure NR inversion |
-| p5k369/grawji | — | Python | Monochromatic gating |
+**Disagreement.** `0xD1A4` measured as JPEG/HEIF select here; filmkit reports
+colour space (1 = sRGB) on an X100VI. Not written by this project either way.
 
-filmkit agrees with every register measured here independently, which is what
-makes its unmeasured entries worth carrying.
+**Do not use** `aradotso/trending-skills` — its table for this block is shifted by
+several addresses (film simulation at `0xD18E`, white balance at `0xD191`).
 
-### Open disagreement
+**Not covered anywhere:** libgphoto2 names nothing between `0xD188` and `0xD1FF`,
+and Fujifilm's Camera Control SDK carries no PTP property codes at all.
 
-`0xD1A4` measured as JPEG/HEIF select on a GFX100RF; filmkit reports colour space
-(1 = sRGB) on an X100VI. Bodies may genuinely differ. Not written by this project
-either way.
-
-### Unreliable source
-
-A skill file circulating as `aradotso/trending-skills` publishes a table for this
-block shifted by several addresses — film simulation at `0xD18E`, grain at
-`0xD18F`, white balance at `0xD191`. It contradicts both direct measurement and
-filmkit's own `constants.ts`, of which it appears to be a garbled retelling.
-
-### Silent sources
-
-Worth knowing these do **not** cover it:
-
-- **libgphoto2** has never named anything between `0xD188` and `0xD1FF`. A scan
-  of 669 historical revisions of `camlibs/ptp2/ptp.h` found no such define in any
-  of them; its X100VI capture lists the whole block as unknown.
-- **Fujifilm's Camera Control SDK** contains no PTP property codes at all. It
-  uses its own API numbering and does not expose per-slot registers.
-
-### Still unidentified
-
-`0xD1A5` reads 7 on every preset anyone has scanned.
+**Unidentified:** `0xD1A5`, which reads 7 everywhere.
