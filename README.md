@@ -67,7 +67,7 @@ the camera is. Changing the C slot on the body resets it.
 | `0xD18E` | Image size | 7 = L 3:2 observed | community |
 | `0xD18F` | Image quality | | community |
 | `0xD190` | Dynamic range | 100 / 200 / 400 | measured |
-| `0xD191` | D-Range priority | must be 0 for tone curves | measured |
+| `0xD191` | D-Range priority | 0 off, 1 weak, 2 strong, 32768 auto | measured + community |
 | `0xD192` | Film simulation | | measured |
 | `0xD193` | Mono warm–cool | int16, ×10, B&W sims only, rejects 0 | community ×4 |
 | `0xD194` | Mono magenta–green | as above | community ×4 |
@@ -83,7 +83,7 @@ the camera is. Changing the C slot on the body resets it.
 | `0xD19E` | Shadow tone | **int16**, ×10 | measured |
 | `0xD19F` | Colour | **int16**, ×10 | measured |
 | `0xD1A0` | Sharpness | **int16**, ×10 | measured |
-| `0xD1A1` | Noise reduction | ×10 | measured (disputed) |
+| `0xD1A1` | High ISO noise reduction | non-linear, see below | measured + community |
 | `0xD1A2` | Clarity | **int16**, ×10; disabled in HEIF | measured |
 | `0xD1A3` | Long exposure NR | 1 = on; other values unknown | community, weak |
 | `0xD1A4` | JPEG / HEIF select | 1 = JPEG, 2 = HEIF | measured (disputed) |
@@ -94,17 +94,48 @@ the camera is. Changing the C slot on the body resets it.
 Two registers were measured here but are named differently by filmkit, which
 tested on an X100VI only:
 
-- `0xD1A1` — measured as noise reduction on a GFX100RF; filmkit reports it as a
-  high-ISO NR sentinel always reading `0x8000` and not stored in presets.
 - `0xD1A4` — measured as JPEG/HEIF select on a GFX100RF; filmkit reports colour
-  space (1 = sRGB).
+  space (1 = sRGB). Different bodies may genuinely differ, and this project does
+  not write it.
 
-Different bodies may genuinely differ. Neither is written by this project.
+`0xD1A1` was on this list too: filmkit calls it a sentinel that always reads
+`0x8000` and is not stored in presets, which is what a camera set to −4 would
+report. Filmcase's table explains both readings, so the register is settled.
+
+### One source that is not reliable
+
+A skill file circulating as `aradotso/trending-skills` publishes a table for this
+block that is shifted by several addresses — it puts film simulation at
+`0xD18E`, grain at `0xD18F`, white balance at `0xD191`. That contradicts direct
+measurement on the body and filmkit's own `constants.ts`, which it appears to be
+a garbled retelling of. Do not use it.
+
+### High ISO noise reduction is not a linear scale
+
+`0xD1A1` does not count in tens like its neighbours. Filmcase documents the
+mapping, and it is not monotonic:
+
+| Menu | Raw | | Menu | Raw |
+|---|---|---|---|---|
+| +4 | `0x5000` | | −1 | `0x3000` |
+| +3 | `0x6000` | | −2 | `0x4000` |
+| +2 | `0x0000` | | −3 | `0x7000` |
+| +1 | `0x1000` | | −4 | `0x8000` |
+| 0 | `0x2000` | | | |
+
+Note that +2 is zero and 0 is `0x2000`, so a recipe that stores a plain menu
+number here writes the wrong strength rather than failing.
+
+### Ranges
+
+Filmcase gives ranges for the registers it covers: highlight and shadow tone run
+−2 to +4 and accept half steps (`+1.5` is raw 15), colour and sharpness run
+−4 to +4, clarity −5 to +5, and the white balance shifts −9 to +9.
 
 ### Still unknown
 
-`0xD191` reads 0 on every preset filmkit scanned, and `0xD1A5` reads 7. Neither
-has been identified by anyone.
+`0xD1A5` reads 7 on every preset scanned and has not been identified by anyone.
+`0xD191` was on this list until Filmcase named it.
 
 ## Signed properties
 
