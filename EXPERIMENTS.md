@@ -42,11 +42,12 @@ bug that more effort fixes.
 
 | Question | Status |
 |---|---|
-| `0xD1A5` | Unidentified by every project that has looked. Only measurement will settle it |
+| `0xD1A5` | Unidentified by every project that has looked — filmkit, fujicli and fp all omit or flag it. Only measurement will settle it |
 | Names for this block in libgphoto2 | Never existed — 669 historical revisions of `ptp.h` checked |
 | PTP property codes in Fujifilm's official SDK | There are none. It uses its own API numbering and exposes no per-slot registers |
 | `aradotso/trending-skills` as a reference | Its table is shifted by several addresses. Wrong |
-| Slot name length limit, or `0xD1B2`'s values, in published sources | Documented nowhere. Measure them |
+| `0xD1B2`'s values in published sources | Documented nowhere. Measure it |
+| Fuji constants in go-mtpfs | Seven, all shooting properties. Nothing in the slot block |
 
 ---
 
@@ -133,8 +134,12 @@ live settings from one mode. If it does not, wireless offers nothing here.
   without being checked.
 - Whether `0xD1B2` really takes 1 for JPEG. It is only written when clarity has
   already been refused, and that path has not been exercised.
-- The slot name length limit. Ten characters is a working assumption; the app
-  now reads the name back after writing, so one long name would settle it.
+- The slot name length limit on this body. fujicli declares 25 characters across
+  the X-Trans generations it covers, and the GFX100RF is not one of them. The app
+  now writes at 25 and reads the name back, so the next slot write settles it.
+- Whether `0xD16E` can be written to put the camera into RAW conversion mode.
+  fujicli documents `6` as that mode. If it takes, the app can stop asking anyone
+  to change CONNECTION MODE by hand.
 - `0xD1A5`, unidentified by anyone.
 - Whether the wireless tether path exposes the slot block — the run above.
 - iOS on the wireless tether path. It needs a UDP broadcast, and that requires

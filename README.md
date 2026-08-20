@@ -140,9 +140,9 @@ it is showing if `CUSTOM SETTING AUTO UPDATE` is on.
 
 `0xD18D` is a PTP string and writes to wherever the cursor points. Naming
 without having just set the cursor puts the name on an unpredictable slot,
-because of the stickiness described in §2. Roughly 10 characters survive,
-spaces included; the camera truncates longer names silently, so read back to see
-what it kept. measured
+because of the stickiness described in §2. fujicli declares a limit of 25
+characters; that is unmeasured here, and the camera truncates silently, so read
+the name back to see what it kept.
 
 ---
 
@@ -152,6 +152,7 @@ what it kept. measured
 
 | Code | Setting | Basis |
 |---|---|---|
+| `0xD16E` | USB mode — `6` is RAW conversion | community |
 | `0xD18C` | Slot cursor (C1–C7) | measured |
 | `0xD18D` | Slot name | measured |
 | `0xD18E` | Image size | community |
@@ -175,8 +176,8 @@ what it kept. measured
 | `0xD1A0` | Sharpness | measured |
 | `0xD1A1` | High ISO noise reduction | measured + community |
 | `0xD1A2` | Clarity | measured |
-| `0xD1A3` | Long exposure NR | weak |
-| `0xD1A4` | JPEG / HEIF select | disputed |
+| `0xD1A3` | Lens modulation optimiser | community ×2 |
+| `0xD1A4` | Colour space | community ×2, disputed |
 | `0xD1A5` | — unidentified, reads 7 | — |
 
 ### 5.2 Live equivalents
@@ -205,9 +206,9 @@ same order, which is why a mapping table is needed rather than an offset.
 | Smooth skin | `0xD198` | `0xD189` |
 | Mono warm–cool | `0xD193` | `0xD104` |
 | Mono magenta–green | `0xD194` | `0xD031` |
-| Long exposure NR | `0xD1A3` | `0xD322` |
-| Image format | `0xD1A4` | `0xD1B2` |
-| Colour space | — | `0xD00A` |
+| Colour space | `0xD1A4` | `0xD00A` |
+| Lens modulation optimiser | `0xD1A3` | — |
+| Image format | — | `0xD1B2` |
 
 ---
 
@@ -221,7 +222,7 @@ same order, which is why a mapping table is needed rather than an offset.
 | Direct | dynamic range | 100 / 200 / 400, or 65535 for auto |
 | Enumerated | film simulation, WB, grain, chrome, smooth skin | see 6.2 |
 | Non-linear | high ISO noise reduction | see 6.4 |
-| String | slot name | PTP string, ~10 characters |
+| String | slot name | PTP string. fujicli declares 25 characters; unmeasured on this body |
 
 Ranges: highlight and shadow tone −2…+4 with half steps allowed (`+1.5` is raw
 `15`), colour and sharpness −4…+4, clarity −5…+5, WB shift −9…+9, monochromatic
@@ -318,13 +319,25 @@ Not achievable over the cable:
 
 | Project | Body | Contributes |
 |---|---|---|
-| [eggricesoy/filmkit](https://github.com/eggricesoy/filmkit) | X100VI | `0xD18E` `0xD18F` `0xD193` `0xD194` `0xD197` `0xD198` `0xD1A3` |
+| [eggricesoy/filmkit](https://github.com/eggricesoy/filmkit) | X100VI | `0xD18E` `0xD18F` `0xD193` `0xD194` `0xD197` `0xD198` |
+| [karaolidis/fujicli](https://git.karaolidis.com/karaolidis/fujicli) | X-Trans III–V | Names 25 of the 26 registers, `0xD16E` USB mode, `0xD1A3` as lens modulation optimiser, slot name limit of 25 characters |
+| [petabyt/fp](https://github.com/petabyt/fp) | X-H1, X-T5 | The profile blob X RAW Studio sends over `0xD185`, with a field list wider than this block |
 | [gosku/Filmcase](https://github.com/gosku/Filmcase) | X-S10 | `0xD191` values, `0xD1A1` table, ranges |
 | [KyleOndy/dotfiles](https://github.com/KyleOndy/dotfiles) | X-T5 | Long exposure NR inversion |
 | p5k369/grawji | — | Monochromatic gating |
 
-Disagreement. `0xD1A4` measured as JPEG/HEIF select here; filmkit reports
-colour space (1 = sRGB) on an X100VI. Not written by this project either way.
+Disagreement, and the weight has moved. `0xD1A4` is recorded here as JPEG/HEIF
+select, but filmkit and fujicli both call it colour space, and fp's parse of the
+profile X RAW Studio sends carries `FileType` and `ColorSpace` as separate
+fields — so the two are different registers and only one of them can be this.
+The reading here came from a slot whose clarity greyed out, which is what HEIF
+does, but that is an inference and the note did not record whether the camera
+itself was ever seen saying HEIF. Treat the two community sources as the better
+evidence. Not written by this project either way.
+
+`0xD1A3` was carried as long exposure NR on filmkit's single weak sighting.
+fujicli names it lens modulation optimiser and fp's profile struct has a
+`LensModulationOpt` field, so that is what it is.
 
 Do not use `aradotso/trending-skills` — its table for this block is shifted by
 several addresses (film simulation at `0xD18E`, white balance at `0xD191`).
