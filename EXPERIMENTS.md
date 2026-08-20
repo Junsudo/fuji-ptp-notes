@@ -145,3 +145,19 @@ live settings from one mode. If it does not, wireless offers nothing here.
 - iOS on the wireless tether path. It needs a UDP broadcast, and that requires
   the multicast entitlement, which Apple grants by application. The
   access-point path needs no entitlement, but is the route already abandoned.
+
+
+## GFX100RF wake-from-standby (2026-08-20)
+
+Only known way to bring a GFX100RF out of "Bluetooth during power off" standby via BLE. In that state the camera responds to normal handshake but refuses `startCameraWiFi` with reply `0x0080` (busy).
+
+| Item | Value |
+| --- | --- |
+| Service | `3B46EC2B-48BA-41FD-B1B8-ED860B60D22B` |
+| Characteristic | `0F36EC14-29E5-411A-A1B6-64EE8383F090` (write-only) |
+| Payload | `0x01` (single byte) |
+| Effect | After ~1.5s, `startCameraWiFi` accepts, replies `0x0180` |
+
+Verified end-to-end: BLE handshake → write `0x01` → wait → `startCameraWiFi` → success. Sends the camera SSID/PW.
+
+Not documented in filmkit, furble, libfuji, hkr, or vcam. tiredboffin's notes described "a third UUID advertised only in power-off-but-still-on mode" but the specific values for the secure firmware were unresolved. These are the values for GFX100RF.
