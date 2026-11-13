@@ -1,0 +1,66 @@
+codes	SDK name	GFX100RF firmware 1.13 setting (fujimod catalog/firmware/gfx100rf/1.13/ui-setting-names), guessed by name	basis	strength of the name match
+0x2011-0x2012	ISOAutoSetting	ISO_AUTO 2184	same name	strong
+0x2013-0x2015	ProgramShift	PSHIFT 2592; FUNCLOCK_PSHIFT 1307	same word; also a lock item, as the SDK's lock flag says	strong
+0x2060-0x2062	SensitivityFineTune	PC_SENSITIVITY_GAIN_LO 2930, PC_SENSITIVITY_GAIN_HI 2931	the only sensitivity settings outside the ISO dial, and inside the PC block; a low and a high gain for a PC to set	weak
+0x2069-0x206B	ShutterType	SHUTTER_TYPE 2418	same name	strong
+0x206C-0x206E	CHfps	CONTINUOUS_SPEED_H 2556 (crop: CONTINUOUS_SPEED_H_CROP 2554)	H for high, beside DRV_MENU_CONTINUOUS 2555	strong
+0x206F-0x2071	CLfps	CONTINUOUS_SPEED_L 2557	L for low, next to the H one	strong
+0x2147	SetCustomSetting	CUSTOM_SET_CALL 226, CUSTOM_SET_SAVE 228, CUSTOM_SET_REGISTER1..7 247-253	select and save of C1 to C7	medium
+0x2198-0x2199	CustomName	CUSTOM_SAVE_NAME 2147, CUSTOM_EDIT_NAME_EDIT 232	same words	strong
+0x219A	SetMovieCustomSetting	CUSTOM_SET_CALL_MOVIE 227, CUSTOM_SET_MOVIE_REGISTER1..7 254-260	movie twin of the above	medium
+0x219B-0x219C	MovieCustomName	CUSTOM_SAVE_NAME_MOVIE 2148, CUSTOM_EDIT_NAME_EDIT_MOVIE 237	same words	strong
+0x218B-0x218D	CustomSettingAutoUpdate	CUSTOM_EDIT_AUTO_SAVE 243 (movie 244)	AUTO UPDATE CUSTOM SETTING in the manual	strong
+0x219D-0x219F	ImageFormat	JPEG_HEIF_CHANGE 2427	JPEG/HEIF SWITCHING; the only still format setting	medium
+0x2248-0x224A	AFCCustom	AFC_SET 2108, AFC_SET_CALL 2107 (movie AFC_SET_MOVIE 2109)	AF-C CUSTOM SETTINGS	strong
+0x2269	GetCropAreaFrameInfo	CROP_MODE 2173	35mm format mode crop	weak
+0x2276-0x2278	DOFScale	SCALE_UNIT 1284	beside F_NUMBER_UNIT 1285 in the AF/MF block; matches what the app already concluded	strong
+0x2280-0x2282	AfZoomMode	FOCUS_CHECK 220 (movie 221); or FOCUS_ZOOM_FN_ACTION_MODE 1282	focus zoom; two candidates	weak
+0x2325-0x2327	FlashSettingMode	FLASH_PATTERN 3086 (FLASH_PATTERN_MENU 3148)	the flash function mode, its submenus 01 to 05 follow	medium
+0x2328-0x232B	FlashCompensation	FLASH_COMPENSATION 3112	same name	strong
+0x232C-0x232E	FlashOutputLevel	FLASH_POW_RATIO 3121	manual flash power	medium
+0x232F-0x2331	FlashTTLMode	FLASH_TTLMODE 3097	same name	strong
+0x2332-0x2334	FlashSyncMode	FLASH_SYNC 3100	same name	strong
+0x2335-0x2337	FlashZoomSetting	FLASH_ZOOM 3108	same name	strong
+0x2338-0x233A	FlashDistribution	FLASH_DIST 3111	same word	strong
+0x233B-0x233D	FlashLEDLightSetting	FLASH_LEDSET 3140 (catch 3142, AF assist 3143)	LED LIGHT SETTING	strong
+0x233E-0x2340	FlashTimes	FLASH_MULTI_COUNT 3132	multi flash count	strong
+0x2341-0x2343	FlashHz	FLASH_MULTI_HZ 3135	same word	strong
+0x2344-0x2346	FlashRedEyeRemoval	FLASH_RED_EYE_CORRECT 3107 (FLASH_RED_EYE_CONTROL 3106)	same words	strong
+0x2347-0x2349	FlashTTLLockMode	FLASH_TTL_LOCK 3144 (TTL_LOCK_SELECT 2182)	same name	strong
+0x234A-0x234C	FlashCommanderSetting	FLASH_GR 3084 (FLASH_GR_FLASHSET 3085)	commander groups A, B, C	medium
+0x234D-0x234F	FlashCHSetting	FLASH_WIRELESS_CH 3138	same word	strong
+0x2351-0x2358	CustomWBGain / CustomWBArea (and movie)	none by name; LCD_CUSTOM_WB 2344 is a display item	no custom white balance gain or area in the setting list	none
+0x332E-0x3330	LiveViewMode	PC_LIVEVIEW_MODE 2929	PC block	strong
+0x3331-0x3333	LiveViewImageRatio	PC_LIVEVIEW_IMAGE_SIZE 2927 (quality 2926)	PC block; size, not ratio, by name	weak
+0x3631	CapMovieFocusGuide	MF_ASSIST_FGUIDE_MOVIE 2273 (with peaking 2275)	focus guide in MF assist for movie	medium
+0x4009-0x4017	Language	LANGUAGE 338	same name	strong
+0x4049	SetPassword	PC_FUNCLOCK_PASSWORD 2923	PC block: the function lock's password set from a PC	medium
+0x4051-0x4052	DriveMode (second)	KEY_DRIVE 2934, MENU_DRIVE_STILL 2574	drive selection	medium
+0x4058-0x407F	FrameNumberSequence	FRAME_NO_MEM 13 (FRAME_NO_MEM_FILE 2975)	FRAME NO. CONTINUOUS / RENEW	strong
+0x4060	ResetFrameNumber	FRAME_NO_MEM 13	its reset	weak
+0x4066-0x4067	MediaRecord	PC_MEDIAWRITE 2913	PC block: whether the card is written while tethered	strong
+0x4074-0x4076	Foldername*	FOLDER_NAME 2154, FOLDER_NAME_SELECT 3027	SELECT FOLDER	strong
+0x407A-0x407C	PixelShiftSettings	PIXELSHIFT 2577, PIXELSHIFT16 2578	pixel shift multi shot	strong
+0x407D-0x407E	Artist	ARTIST 2145	same name	strong
+0x4107	CleanSensor	DUST_REDUCTION 1189 (at power on 1190, off 1191)	SENSOR CLEANING	strong
+0x4231-0x4238	CustomStudioPowerSave	CUSTOM_STUDIO_ECO 2925 (STUDIO_ECO 341)	in the PC block beside CUSTOM_AUTO_POWER_OFF 2924, as STUDIO_ECO 341 sits beside AUTO_POWER_OFF 340	strong
+0x423E-0x4240	C2PAFunction	C2PA_* network items (C2PA_WLAN_SSID 606 and on, C2PA_TRANSFER_IMG_CHECK_HEIF 3365)	firmware 1.13 has C2PA; the earlier note 'expect the body to refuse' rests on 1.10 papers	medium
+0x4255-0x4256	BackupSettings	PC_LOAD_BACKUPSET 2928 (BACKUP_SUMID 2981)	PC block	strong
+0x4264-0x4267	MicLineSetting	MIC_REMOTE 614	MIC/REMOTE RELEASE	strong
+0x426B-0x426D	PlayBackMedia	PLAY_SELECT_SLOT 2900	card slot for playback	medium
+0x4271-0x4273	ApertureUnit	F_NUMBER_UNIT 1285 (TNUMBER_STEP 2594)	beside SCALE_UNIT; F or T stops	strong
+0x4274	GetCameraRotation	AUTO_ROTATE_SHOW 1288	weak by name	weak
+0x4275	GetCameraStatus	STATUS_* 3042-3055	a status block, no single item	weak
+0x4276-0x4277	CameraOperationLock	CAMERA_OPE_LOCK 3074	same name, beside PCSH_LIVEVIEW_TYPE 3075: an item of its own, not the manual's LOCK. The earlier note 'no item by this name' was about the manual only	strong
+unrouted	Get/SetPriorityMode	PC_PRIORITY 2912	PC block	strong
+unrouted	Get/SetLiveViewExposure	PC_THROUCH_EXPOSURE 2907	PC block: liveview exposure	strong
+unrouted	Get/SetLiveViewWhiteBalanceMode, ...Gain	PC_THROUCH_WB 2908, PC_THROUCH_RGBGAIN 2909, PC_THROUCH_AEAWB 2910	PC block	strong
+unrouted	Get/SetLiveViewStyle	PCSH_LIVEVIEW_TYPE 3075 (PCSH_LIVEVIEW_DRAWBLACK 3076)	PC shooting block	medium
+unrouted	Get/SetVideoOutOnOff	PC_VIDEOOUT 2911	PC block	strong
+unrouted	Get/SetCustomPreviewTime	PC_REC_VIEW_CUSTOM 2914	PC block	strong
+unrouted	Get/SetStandbyMode	PC_STANBY 2918 (PC_POWER_CONTROL 2919)	PC block	strong
+unrouted	Get/SetShutterSpeed, Get/SetAperture	PC_EXPOSURETIME 2917, PC_FNUMBER 2916 (PC_SET_SS_MODE 2932, PC_SET_FNUM_MODE 2933)	PC block	strong
+unrouted	Get/SetWhiteBalanceGain	PC_RGBGAIN 2915	PC block	medium
+unrouted	GetAELock / GetAEAFLock	AE_LOCK_STATUS 3050, AF_LOCK_STATUS 3051, AWB_LOCK_STATUS 3052	status block	medium
+unrouted	Get/SetBKT*	BKT_SETTING 2306, AE_BKT 2559, AE_BKT_SETTING 2155 and on	bracketing	medium
+unrouted	Get/SetPhotometryLevel	none by name		none

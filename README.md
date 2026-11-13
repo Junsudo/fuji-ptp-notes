@@ -6,6 +6,15 @@ and reading them back.
 Body: GFX100RF · Hosts: macOS 26, iOS 26 (ImageCaptureCore) · Notes
 current as of 2026-08
 
+Other notes in this repository:
+
+| File | Covers |
+|---|---|
+| [TETHER.md](TETHER.md) | Shooting, liveview and settings through Fujifilm's Camera Control SDK and raw PTP, on macOS and iOS, over USB and Wi-Fi |
+| [FIRMWARE.md](FIRMWARE.md) | What firmware 1.13 gives by static analysis: the USB controller, the per-mode PTP lists |
+| [EXPERIMENTS.md](EXPERIMENTS.md) | The experiment log |
+| [data/](data) | Property descriptors, SDK API tables, firmware code lists |
+
 ## Contents
 
 1. [Confidence](#1-confidence)

@@ -1,0 +1,287 @@
+code	name (ours/libgphoto2, blank = unnamed)	type	access	current	factory default	form (allowed values)
+0x5005	WhiteBalance	UINT16	rw	2	2	enum(14) 2 4 6 8 32769 32770 32771 32774 32775 32776 32777 32778 32800 32801
+0x5007	FNumber	UINT16	rw	400	200	enum(1) 400
+0x500A	FocusMode	UINT16	rw	32770	1	enum(1) 32770
+0x500B	MeteringMode	UINT16	rw	3	3	enum(1) 3
+0x500D	ShutterSpeed	UINT32	rw	396850	244	enum(1) 396850
+0x500E	ExposureProgram	UINT16	rw	3	1	enum(1) 3
+0x500F	ISO	INT32	rw	160	200	enum(1) 160
+0x5010	ExposureComp	INT16	rw	0	0	enum(1) 0
+0x5011	DateTime	STR	rw	'20261113T014600'	'20210101T000000'	
+0x5012	CaptureDelay	UINT16	rw	0	0	enum(3) 10000 2000 0
+0x5015	Sharpness	INT16	rw	0	4	range -40..40 step 10
+0x501C	FocusMeteringMode	UINT16	rw	32769	32769	enum(3) 32769 32770 32771
+0xD001	FilmSimulation	UINT16	rw	17	1	enum(20) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+0xD007	DRangeMode	UINT16	rw	65535	100	enum(3) 65535 100 200
+0xD008	ColorMode	INT16	rw	0	4	range -40..40 step 10
+0xD00A	ColorSpace	UINT16	rw	1	1	enum(2) 1 2
+0xD00B	WhitebalanceTune1	INT16	rw	0	9	range -9..9 step 1
+0xD00C	WhitebalanceTune2	INT16	rw	0	9	range -9..9 step 1
+0xD017	ColorTemperature	UINT16	rw	0	10000	enum(0) 
+0xD018	Quality	UINT16	rw	1	2	enum(7) 1 2 3 4 5 6 7
+0xD01B	ThroughImageZoom	UINT16	rw	1	1	enum(1) 1
+0xD01C	NoiseReduction	UINT16	rw	28672	8192	enum(9) 0 4096 8192 12288 16384 20480 24576 28672 32768
+0xD020	FaceDetectionMode	UINT16	rw	1	2	enum(2) 1 2
+0xD022	RawCompression	UINT16	rw	1	1	enum(3) 1 2 3
+0xD023	GrainEffect	UINT16	rw	6	1	enum(5) 1 2 3 4 5
+0xD024	SetEyeAFMode	UINT16	rw	4	2	enum(4) 1 2 3 4
+0xD025	FocusPoints	UINT16	rw	3	3	enum(2) 3 4
+0xD026	MFAssistMode	UINT16	rw	7	1	enum(9) 1 4 5 6 7 8 9 10 11
+0xD027	InterlockAEAFArea	UINT16	rw	1	1	enum(2) 1 2
+0xD028	CommandDialMode	UINT16	rw	1	1	enum(2) 1 2
+0xD029	Shadowing	UINT16	rw	1	1	enum(3) 1 2 3
+0xD02A	ExposureIndex	UINT16	rw	32769	32769	enum(1) 32769
+0xD02B	MovieISO	UINT16	rw	32769	32769	enum(1) 32769
+0xD02D		UINT16	rw	32769	32769	enum(1) 32769
+0xD02E	WideDynamicRange	UINT16	rw	0	0	enum(3) 0 1 32768
+0xD030		UINT16	rw	1	1	enum(3) 1 2 3
+0xD031		INT16	rw	0	18	range 0..0 step 10
+0xD032		INT16	rw	0	5	range -50..50 step 10
+0xD033		UINT16	r	2	1	enum(0) 
+0xD034		UINT16	r	2	1	enum(0) 
+0xD035		UINT16	r	2	1	enum(0) 
+0xD036		UINT16	r	2	1	enum(0) 
+0xD038		UINT32	r	128	0	range 0..0 step 0
+0xD039		UINT32	rw	1	65536	enum(20) 65536 1 131072 2 524288 8 16 16777216 256 33554432 512 67108864 1024 134217728 2048 268435456 4096 196611 131075 3
+0xD03A		UINT16	rw	5	1	enum(1) 5
+0xD03B		UINT16	rw	1	1	enum(1) 1
+0xD03C		UINT16	rw	1	3	enum(3) 1 2 4
+0xD03D		UINT16	rw	514	3	
+0xD03E		UINT16	rw	258	1	
+0xD040	UnknownD040	UINT32	rw	1	0	range 0..4294967295 step 1
+0xD041		UINT16	rw	2	1	enum(1) 1
+0xD042		UINT16	rw	2	1	enum(6) 1 2 3 4 5 6
+0xD043	추측: flash compensation (flash block, INT16 ±5 EV in 1/3)	INT16	rw	0	0	enum(32) 32767 -5000 -4667 -4333 -4000 -3667 -3333 -3000 -2667 -2333 -2000 -1667 -1333 -1000 -667 -333 0 333 667 1000 1333 1667 2000 2333 …
+0xD044		UINT16	rw	0	1	enum(30) 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 …
+0xD045		UINT16	rw	1	1	enum(4) 1 2 3 4
+0xD046		UINT16	rw	2	1	enum(4) 1 2 3 4
+0xD047	추측: flash zoom, mm x10	UINT16	rw	0	1	enum(16) 0 65535 300 350 350 440 630 880 880 1010 1070 1070 1140 1330 1330 0
+0xD048		UINT16	rw	1	1	enum(4) 1 2 3 4
+0xD049		UINT16	rw	1	1	enum(5) 1 2 3 4 5
+0xD04A		UINT16	rw	0	0	enum(31) 0 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 25 30 35 40 …
+0xD04B		UINT16	rw	0	0	enum(48) 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 25 30 35 …
+0xD04C		UINT16	rw	1	1	enum(4) 1 2 3 4
+0xD04D		UINT16	rw	2	1	enum(2) 1 2
+0xD04E		UINT16	rw	1	1	enum(5) 1 2 3 4 5
+0xD04F		UINT16	rw	1	1	enum(5) 1 2 3 4 5
+0xD100	Comment	STR	rw	''	''	
+0xD104	BlackImageTone	INT16	rw	0	18	range 0..0 step 10
+0xD106	FrameGuideMode	UINT16	rw	2	1	enum(3) 1 2 3
+0xD10A	ShutterPriorityMode1	UINT16	rw	1	1	enum(2) 1 2
+0xD10B	ShutterPriorityMode2	UINT16	rw	2	2	enum(2) 1 2
+0xD112	AFIlluminator	UINT16	rw	2	2	enum(2) 1 2
+0xD136	FunctionLock	UINT16	rw	1	1	enum(3) 1 2 3
+0xD145	Password	STR	rw	'0000'	''	
+0xD153	FirmwareVersion	UINT16	r	274	256	
+0xD154	ShotCount	UINT32	rw	10405	0	range 0..4294967295 step 1
+0xD155	ShutterExchangeCount	UINT32	r	0	0	range 0..0 step 0
+0xD156		UINT16	r	0	256	
+0xD157	WorldClock	UINT16	rw	1	1	enum(2) 1 2
+0xD158	TimeDifference1	INT16	rw	9	0	range -23..23 step 1
+0xD159	TimeDifference2	UINT16	rw	0	0	enum(4) 0 15 30 45
+0xD15A	Language	UINT16	rw	1	1	enum(35) 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 …
+0xD15B	FrameNumberSequence	UINT16	rw	1	1	enum(2) 1 2
+0xD16D		UINT32	rw	10405	0	range 0..4294967295 step 1
+0xD16E	USBMode	UINT16	r	5	0	range 0..0 step 0
+0xD170	LensZoomPos	UINT16	rw	1	0	range 1..1 step 0
+0xD171	FocusPosition	INT16	rw	0	0	enum(6) 0 0 0 0 0 0
+0xD173	LiveViewImageQuality	UINT16	rw	3	1	enum(2) 1 3
+0xD174	LiveViewImageSize	UINT16	rw	2	2	enum(3) 1 2 3
+0xD17B		UINT16	rw	1	1	enum(1) 1
+0xD17E	CropAreaFrameInfo	STR	r	''	''	
+0xD17F	ResetSetting	UINT16	rw	4	1	enum(3) 4 5 7
+0xD180		UNDEF	r	(variable data, raw 80d100000100)		
+0xD181		UNDEF	r	(variable data, raw 81d100000000)		
+0xD182		INT16	rw	0	0	range -1..999 step 1
+0xD188		UINT16	rw	2	2	enum(2) 1 2
+0xD189		UINT16	rw	1	1	enum(3) 1 2 3
+0xD18A		STR	rw	''	''	enum(0) 
+0xD18B		STR	rw	'512,512,4,1,'	'512,512,4,1,'	
+0xD18C	(bank, fujicli/FilmKit)	UINT16	rw	7	1	enum(7) 1 2 3 4 5 6 7
+0xD18D	(bank, fujicli/FilmKit)	STR	rw	'Kodachrome 64'	''	
+0xD1B0		STR	rw	'0x00000000,0x00,'	''	
+0xD1B1		UNDEF	r	(variable data, raw b1d1ffff0101000000)		
+0xD1B2		UINT16	rw	7	7	enum(1) 7
+0xD1B4		UNDEF	r	(variable data, raw b4d100000100)		
+0xD1B5		UNDEF	r	(variable data, raw b5d100000000)		
+0xD1B6		UINT16	rw	2	2	enum(2) 1 2
+0xD1BC		UINT16	rw	1	1	enum(2) 1 2
+0xD1BD		UINT16	rw	1	2	enum(7) 1 2 3 4 5 6 7
+0xD1BE		UINT16	r	2	0	enum(0) 
+0xD1C2		STR	rw	'5,3'	'5,3'	range '1,1'..'13,9' step '2,2'
+0xD1C3		STR	rw	'7,3'	'7,3'	range '1,1'..'13,9' step '2,2'
+0xD1C4		STR	rw	'7,1'	'7,1'	range '1,1'..'13,9' step '2,2'
+0xD1C5		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD1C6		UINT16	r	1	0	enum(0) 
+0xD1C8		UINT16	rw	0	0	enum(4) 0 1 2 3
+0xD1C9		UINT16	rw	1	1	enum(3) 1 2 3
+0xD201	ReleaseMode	UINT16	rw	4	4	enum(11) 4 2 3 11 13 5 8 10 12 14 15
+0xD207	PriorityMode	UINT16	rw	1	2	enum(2) 1 2
+0xD208	CaptureControl (evidence: 0x0200/0x0304 still-capture values, CLAUDE.md)	UINT16	rw	772	772	enum(17) 512 4 772 1280 12 32768 40960 6 36864 2 37120 1 37632 5 14 37376 64
+0xD209	AFStatus	UINT16	r	2	1	enum(0) 
+0xD20A		UINT16	r	1	1	enum(0) 
+0xD20B	DeviceName	STR	rw	''	''	
+0xD20C	MediaRecord	UINT16	rw	1	4	enum(4) 1 2 3 4
+0xD20D	MediaCapacity	STR	r	'85,16,36035328,9,0,0,0,0,0,0,0,0'	'0,0,0,0,0,0,0,0,0,0,0,0'	
+0xD20E	FreeSDRAMImages	UINT16	r	11	0	range 0..0 step 0
+0xD211	MediaStatus	UINT16	r	769	0	range 0..0 step 0
+0xD212	CurrentState	UNDEF	r	(variable data, raw 12d2000000000000)		
+0xD215	Copyright	STR	rw	''	''	
+0xD216	Copyright2	STR	rw	''	''	
+0xD21C	UnknownD21C	UINT16	rw	3	0	enum(1) 0
+0xD21D		UINT16	r	100	0	range 0..0 step 0
+0xD222	SensitivityFineTune1	UINT16	rw	8192	0	range 0..65535 step 1
+0xD223	SensitivityFineTune2	UINT16	rw	8192	0	range 0..65535 step 1
+0xD224	Unknown_D224	UINT16	r	0	0	range 0..0 step 0
+0xD225		STR	rw	'1,2,'	'1,2,'	enum(2) '1,2,' '2,2,'
+0xD226	CompressSmall	STR	r	'634,624,655,0,0,0,'	''	
+0xD227	EnableCorrectFileSize	STR	r	'\u0e0059'	''	
+0xD228	AutoSaveDatabaseStatus	UINT16	rw	1	1	enum(1) 1
+0xD229	CaptureRemaining	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD22A	MovieRemainingTime	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD22B	Unknown15	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD22C		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD22D		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD22E		UINT16	r	1	0	enum(0) 
+0xD22F		UNDEF	r	(variable data, raw 2fd200000000)		
+0xD230	ForceMode	UINT16	rw	1	1	enum(2) 1 2
+0xD232		UINT16	rw	1	1	enum(6) 1 2 3 4 5 6
+0xD233		STR	rw	'2,0,1'	'2,0,1'	range '0,0,0'..'0,0,0' step '0,0,0'
+0xD234		UINT16	rw	2	2	enum(1) 2
+0xD235	CompressionCutOff	UNDEF	r	(variable data, raw 35d200000100)		
+0xD236		UINT16	r	1	0	enum(0) 
+0xD237		STR	rw	'JUNSU PARK'	''	
+0xD238		UINT16	rw	2	1	enum(3) 1 2 3
+0xD23A		UINT32	rw	32884	32884	range 0..32884 step 1
+0xD23B		UINT16	rw	1	1	enum(2) 1 2
+0xD23C		UINT16	rw	2	2	enum(2) 2 1
+0xD23E		UINT16	rw	2	2	enum(2) 1 2
+0xD23F		UINT32	r	771	0	range 0..0 step 0
+0xD240	ShutterSpeed2	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD241	ImageAspectRatio	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD242	BatteryLevel	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD243		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD246	DriveMode	-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD247		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD248		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD249		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD24E		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD250		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD254		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD255		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD257		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD258		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD259		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD25A		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD25B		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD25C		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD25D		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD25E		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD260		UINT16	rw	1	1	enum(7) 1 2 3 4 5 6 7
+0xD261		UINT16	rw	1	1	enum(7) 1 2 3 4 5 6 7
+0xD262		UINT16	rw	257	257	range 257..1799 step 1
+0xD263		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD264		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD265		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD266		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD267		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD268		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD269		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26A		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26B		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26C		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26D		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26E		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD26F		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD270		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD271		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD272		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD273		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD274		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD275		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD276		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD277		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD278		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD279		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27A		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27B		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27C		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27D		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27E		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD27F		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD280		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD281		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD282		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD283		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD284		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD285		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD286		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD287		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD288		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD289		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28A		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28B		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28C		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28D		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28E		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD28F		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD290		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD291		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD292		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD293		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD294		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD297		UINT16	rw	1	1	enum(4) 4 3 2 1
+0xD2A0		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A1		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A2		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A3		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A4		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A5		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A8		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2A9		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2AA		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2AB		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2AC		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2B2		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2B3		-	-	refused (0x2002 General Error, in camera and PC priority alike)		
+0xD2B6		STR	r	'0,0,1024,1024,0,'	''	
+0xD304		UINT16	rw	4	1	enum(5) 1 3 4 5 6
+0xD305		UINT16	rw	1	1	enum(2) 1 2
+0xD306		UINT32	rw	0	0	range 0..1067475916 step 1
+0xD307		UINT16	rw	1	1	enum(2) 1 2
+0xD310	TotalShotCount	UINT32	rw	10405	0	range 0..4294967295 step 1
+0xD320	HighLightTone	INT16	rw	0	8	range -20..40 step 5
+0xD321	ShadowTone	INT16	rw	0	8	range -20..40 step 5
+0xD322	LongExposureNR	UINT16	rw	1	1	enum(2) 1 2
+0xD323	FullTimeManualFocus	UINT16	rw	1	2	enum(2) 1 2
+0xD33F	ViewMode1	UINT16	rw	1	1	enum(5) 1 2 3 4 5
+0xD347	FocusPoint	STR	rw	'2,0,3'	'/a,b,c/x,y,z/1,1,1'	range '-6,-4,1'..'6,4,6' step '1,1,1'
+0xD34A	InstantAFMode	UINT16	rw	2	1	enum(2) 1 2
+0xD34B	PreAFMode	UINT16	rw	2	2	enum(2) 1 2
+0xD34E	LockButtonMode	UINT16	rw	2	1	enum(2) 1 2
+0xD352	DateTimeDispFormat	UINT16	rw	1	1	enum(3) 1 2 3
+0xD359	ExposurePreview	UINT16	rw	3	1	enum(1) 3
+0xD35E	FocusCheckMode	UINT16	rw	1	2	enum(2) 1 2
+0xD35F	FocusScaleUnit	UINT16	rw	1	1	enum(2) 1 2
+0xD364	CustomAutoPowerOff	UINT16	rw	0	0	range 0..255 step 1
+0xD365	FileNamePrefix1	STR	rw	'DSCF'	'DSCF'	
+0xD366	FileNamePrefix2	STR	rw	'DSF'	'DS'	
+0xD368		UINT16	rw	0	0	range 0..255 step 1
+0xD369		UINT16	rw	3	1	enum(2) 1 3
+0xD36A	BatteryInfo1	UINT32	r	10	0	range 0..0 step 0
+0xD36B	BatteryInfo2	STR	r	'53,0,0'	''	
+0xD36D	LensNameAndSerial	STR	r	',,'	''	
+0xD36E	CustomDispInfo	UINT32	rw	2088763385	2088763368	range 0..4286578685 step 1
+0xD36F	FunctionLockCategory1	UINT32	rw	128	128	range 0..3203407615 step 1
+0xD370	FunctionLockCategory2	UINT32	rw	0	0	range 0..537127037 step 1
+0xD372	FocusArea1	STR	rw	'2,0,3'	'/a,b,c/x,y,z/1,1,1'	range '-6,-4,1'..'6,4,6' step '1,1,1'
+0xD374	FocusArea3	STR	rw	'2,0,3'	'/a,b,c/x,y,z/1,1,1'	range '-6,-4,1'..'6,4,6' step '1,1,1'
+0xD375	FrameGuideGridInfo1	STR	rw	'341,683,0,0,850,341,683,0,0,850,3,3,7,2,'	'0,0,0,0,850,0,0,0,0,850,0,0,0,0,'	
+0xD376	FrameGuideGridInfo2	STR	rw	'0,0,0,0,850,0,0,0,0,850,0,0,0,0,'	'0,0,0,0,850,0,0,0,0,850,0,0,0,0,'	
+0xD381		UINT16	rw	3	2	enum(6) 1 2 3 4 5 6
+0xD38A	LensUnknownData	UINT16	r	1	1	enum(0) 
+0xD38B		UINT16	r	1	0	enum(0) 
+0xD38C	LensZoomPosCaps	UINT16	rw	1	0	range 1..1 step 1
+0xD38D	LensFNumberList	STR	r	'400,450,500,560,640,710,800,900,1000,1100,1300,1400,1600,1800,2000,2200'	''	
+0xD38E	LensFocalLengthList	STR	r	'3500,2800'	''	
+0xD395	FocusArea4	STR	rw	'2,0,3'	'/a,b,c/x,y,z/1,1,1'	range '-6,-4,1'..'6,4,6' step '1,1,1'

@@ -1,0 +1,682 @@
+code	name	params	status	never call	parameter names from the SDK's own trace
+0x2011	SetISOAutoSetting	Sl*	in neither header nor manual		nISOAuto=%d, pISOAuto=0x%08x
+0x2012	GetISOAutoSetting	Gl*	in neither header nor manual		nISOAuto=%d, pISOAuto=0x%08x
+0x2013	SetProgramShift	Sl	in neither header nor manual		programShift=%d
+0x2014	GetProgramShift	Gp	in neither header nor manual		pProgramShift=0x%08x
+0x2015	CapProgramShift	Cpp	in neither header nor manual		plNumProgramShift=0x%08X, plProgramShift=0x%08X
+0x2060	SetSensitivityFineTune	Sll	in neither header nor manual		lGainLo=%dx, lGainHi=%d
+0x2061	GetSensitivityFineTune	Gpp	in neither header nor manual		plGainLo=0x%04x, plGainHi=0x%04x
+0x2062	CapSensitivityFineTune	Cpppp	in neither header nor manual		plGainLo_Min=0x%08X, plGainHi_Min=0x%08X, plGainLo_Max=0x%08X, plGainHi_Max=0x%08X
+0x2063	CapHighFrequencyFlickerlessMode	Cpp	manual, used by the app		plNum=0x%08X, plMode=0x%08X
+0x2064	SetHighFrequencyFlickerlessMode	Sl	manual, used by the app		lMode=%d
+0x2065	GetHighFrequencyFlickerlessMode	Gp	manual, used by the app		plMode=0x%08x
+0x2066	CapMovieHighFrequencyFlickerlessMode	Cpp	manual, used by the app		plNum=0x%08X, plMode=0x%08X
+0x2067	SetMovieHighFrequencyFlickerlessMode	Sl	manual, used by the app		lMode=%d
+0x2068	GetMovieHighFrequencyFlickerlessMode	Gp	manual, used by the app		plMode=0x%08x
+0x2069	CapShutterType	Cpp	in neither header nor manual		
+0x206A	SetShutterType	Sl	in neither header nor manual		
+0x206B	GetShutterType	Gp	in neither header nor manual		
+0x206C	CapCHfps	Cpp	in neither header nor manual		
+0x206D	SetCHfps	Sl	in neither header nor manual		
+0x206E	GetCHfps	Gp	in neither header nor manual		
+0x206F	CapCLfps	Cpp	in neither header nor manual		
+0x2070	SetCLfps	Sl	in neither header nor manual		
+0x2071	GetCLfps	Gp	in neither header nor manual		
+0x2101	SetImageSize	Sl	manual, used by the app		imageSize=%d
+0x2102	GetImageSize	Gp	manual, used by the app		pImageSize=0x%04x
+0x2103	SetSharpness	Sl	manual, used by the app		sharpnessMode=%d
+0x2104	GetSharpness	Gp	manual, used by the app		pSharpnessMode=0x%04x
+0x2105	SetColorMode	Sl	manual, used by the app		colorMode=%d
+0x2106	GetColorMode	Gp	manual, used by the app		pColorMode=0x%04x
+0x2121	SetFilmSimulationMode	Sl	manual, used by the app		mode=%d
+0x2122	GetFilmSimulationMode	Gp	manual, used by the app		pMode=0x%04x
+0x2127	SetColorSpace	Sl	manual, used by the app		colorSpace=%d
+0x2128	GetColorSpace	Gp	manual, used by the app		pColorSpace=0x%04x
+0x2129	SetImageQuality	Sl	manual, used by the app		imageQuality=%d
+0x2130	GetImageQuality	Gp	manual, used by the app		pImageQuality=0x%04x
+0x2131	SetNoiseReduction	Sl	manual, used by the app		noiseReduction=%d
+0x2132	GetNoiseReduction	Gp	manual, used by the app		pNoiseReduction=0x%04x
+0x2135	SetFaceDetectionMode	Sl	manual, used by the app		
+0x2136	GetFaceDetectionMode	Gp	manual, used by the app		
+0x2139	SetMacroMode	Sl	refused by this body (-1)		
+0x2140	GetMacroMode	Gp	refused by this body (-1)		
+0x2141	SetHighLightTone	Sl	manual, used by the app		
+0x2142	GetHighLightTone	Gp	manual, used by the app		
+0x2143	SetShadowTone	Sl	manual, used by the app		
+0x2144	GetShadowTone	Gp	manual, used by the app		
+0x2145	SetLongExposureNR	Sl	manual, used by the app		nrOnOff=%d
+0x2146	GetLongExposureNR	Gp	manual, used by the app		pNROnOff=0x%08x
+0x2147	SetCustomSetting	Slll	in neither header nor manual		customSetting=%d, lDestination=%d, lSource=%d
+0x2148	SetFullTimeManualFocus	Sl	manual, used by the app		nOnOff=%d
+0x2149	GetFullTimeManualFocus	Gp	manual, used by the app		pOnOff=0x%08x
+0x2150	SetRAWCompression	Sl	manual, used by the app		lRawCompression=%d
+0x2151	GetRAWCompression	Gp	manual, used by the app		plRawCompression=0x%04x
+0x2152	SetGrainEffect	Sl	manual, used by the app		lEffect=%d
+0x2153	GetGrainEffect	Gp	manual, used by the app		plEffect=0x%04x
+0x2154	SetShadowing	Sl	manual, used by the app		lShadowing=%d
+0x2155	GetShadowing	Gp	manual, used by the app		plShadowing=0x%04x
+0x2156	SetWideDynamicRange	Sl	manual, used by the app		lWideDynamicRange=%d
+0x2157	GetWideDynamicRange	Gp	manual, used by the app		plWideDynamicRange=0x%04x
+0x2158	SetBlackImageTone	Sl	refused by this body (-1)		lBlackImageTone=%d
+0x2159	GetBlackImageTone	Gp	refused by this body (-1)		plBlackImageTone=0x%04x
+0x2160	SetRAWOutputDepth	Sl	manual, used by the app		lOutputDepth=%d
+0x2161	GetRAWOutputDepth	Gp	manual, used by the app		plOutputDepth=0x%04x
+0x2162	SetSmoothSkinEffect	Sl	manual, used by the app		lEffect=%d
+0x2163	GetSmoothSkinEffect	Gp	manual, used by the app		plEffect=0x%04x
+0x2166	GetDetectedFaceFrame	Gp*	header only, no manual entry		plNum=0x%08x, pFrameInfo=0x%08x
+0x2167	SetDetectedFaceFrame	S*	header only, no manual entry		pFrameInfo=0x%08x
+0x2168	SetColorChromeBlue	Sl	manual, used by the app		lEffect=%d
+0x2169	GetColorChromeBlue	Gp	manual, used by the app		pFocusMode=0x%08x
+0x216A	SetMonochromaticColor	Sll	manual, used by the app		lWarmCool=%d, lRedGreen=%d
+0x216B	GetMonochromaticColor	Gpp	manual, used by the app		plWarmCool=0x%08x, plRedGreen=0x%08x
+0x216C	SetClarityMode	Sl	manual, used by the app		
+0x216D	GetClarityMode	Gp	manual, used by the app		
+0x216E	GetCommandDialStatus	Gpppp	header only, no manual entry		
+0x2180	CapImageSize	Cpp	manual, used by the app		plNumImageSize=0x%08X, plImageSize=0x%08X
+0x2181	CapSharpness	Cpp	manual, used by the app		
+0x2182	CapColorMode	Cpp	manual, used by the app		
+0x2183	CapFilmSimulationMode	Cpp	manual, used by the app		plNum=0x%08X, pMode=0x%08X
+0x2184	CapColorSpace	Cpp	manual, used by the app		plNum=0x%08X, pColorSpace=0x%08X
+0x2185	CapImageQuality	Cpp	manual, used by the app		plNum=0x%08X, pImageQuality=0x%08X
+0x2186	CapNoiseReduction	Cpp	manual, used by the app		plNum=0x%08X, pNoiseReduction=0x%08X
+0x2187	CapFaceDetectionMode	Cpp	manual, used by the app		plNum=0x%08X, plFaceDetectionMode=0x%08X
+0x2188	CapHighLightTone	Cpp	manual, used by the app		
+0x2189	CapShadowTone	Cpp	manual, used by the app		
+0x218A	CapLongExposureNR	Cpp	manual, used by the app		plNum=0x%08X, plLongExposureNR=0x%08X
+0x218B	CapCustomSettingAutoUpdate	Cpp	header only, no manual entry		plNum=0x%08X, lSetting=0x%08X
+0x218C	SetCustomSettingAutoUpdate	Sl	header only, no manual entry		lSetting=%d
+0x218D	GetCustomSettingAutoUpdate	Gp	header only, no manual entry		pFocusMode=0x%08x
+0x218E	CapFullTimeManualFocus	Cpp	manual, used by the app		plNum=0x%08X, pOnOff=0x%08X
+0x218F	CapRAWCompression	Cpp	manual, used by the app		plNum=0x%08X, plRawCompression=0x%08X
+0x2190	CapGrainEffect	Cpp	manual, used by the app		plNum=0x%08X, plEffect=0x%08X
+0x2191	CapShadowing	Cpp	manual, used by the app		plNum=0x%08X, plShadowing=0x%08X
+0x2192	CapWideDynamicRange	Cpp	manual, used by the app		plNum=0x%08X, plWideDynamicRange=0x%08X
+0x2193	CapRAWOutputDepth	Cpp	manual, used by the app		plNum=0x%08X, plOutputDepth=0x%08X
+0x2194	CapSmoothSkinEffect	Cpp	manual, used by the app		plNum=0x%08X, plEffect=0x%08X
+0x2195	CapColorChromeBlue	Cpp	manual, used by the app		plNum=0x%08X, plEffect=0x%08X
+0x2196	CapMonochromaticColor	Cpppp	manual, used by the app		
+0x2197	CapClarityMode	Cpp	manual, used by the app		
+0x2198	SetCustomName	Sls	in neither header nor manual		customSetting=%d, pCustomName=%s
+0x2199	GetCustomName	Gls	in neither header nor manual		customSetting=0x%08x, pCustomName=0x%08x
+0x219A	SetMovieCustomSetting	Slll	in neither header nor manual		customSetting=%d, lDestination=%d, lSource=%d
+0x219B	SetMovieCustomName	Sls	in neither header nor manual		customSetting=%d, pCustomName=%s
+0x219C	GetMovieCustomName	Gls	in neither header nor manual		customSetting=0x%08x, pCustomName=0x%08x
+0x219D	CapImageFormat	Cpp	header only, no manual entry		plNum=0x%08X, pImageFormat=0x%08X
+0x219E	SetImageFormat	Sl	header only, no manual entry		ImageFormat=%d
+0x219F	GetImageFormat	Gp	header only, no manual entry		pImageFormat=0x%04x
+0x2201	SetFocusMode	Sl	manual, used by the app		
+0x2202	GetFocusMode	Gp	manual, used by the app		pFocusMode=0x%04x
+0x2203	SetAFMode	Sll	manual, used by the app		lAngle=%d, afMode=%d
+0x2204	GetAFMode	Glp	manual, used by the app		lAngle=%d, pAfMode=0x%04x
+0x2205	SetFocusArea	Sl*	manual, used by the app		nDir=%d, pFocusArea=0x%08x
+0x2206	GetFocusArea	Gl*	manual, used by the app		nDir=%d, pFocusArea=0x%08x
+0x2207	SetFocusPos	Sl	manual, used by the app		hCamera=%08xh, lFocusPos=%d
+0x2208	GetFocusPos	Gp	manual, used by the app		hCamera=%08xh, plFocusPos=0x%08x
+0x2209	CapFocusMode	Cpp	manual, used by the app		plNumFocusMode=0x%08X, plFocusMode=0x%08X
+0x220A	GetAFStatus	Gp	header only, no manual entry		hCamera=%08xh, plAFStatus=0x%08x
+0x220C	CapMovieAFMode	Cpp	manual, used by the app		plNum=0x%08X, afMode=0x%08X
+0x220D	SetMovieAFMode	Sl	manual, used by the app		hCamera=%08xh, AfMode=%d
+0x220E	GetMovieAFMode	Gp	manual, used by the app		hCamera=%08xh, pAfMode=0x%08x
+0x2213	CapMovieFocusArea	Cl**	manual, not used		nDirection=%d, pFocusArea_Min=0x%08X, pFocusArea_Max=0x%08X
+0x2214	SetMovieFocusArea	Sl*	manual, not used		nDirection=%d, pFocusArea=0x%08X
+0x2215	GetMovieFocusArea	Gl*	manual, not used		nDirection=%d, pFocusArea=0x%08X
+0x2217	SetShutterPriorityMode	Sll	manual, used by the app		hCamera=%08xh, nFocusMode=%d, priority=%d
+0x2218	GetShutterPriorityMode	Glp	manual, used by the app		hCamera=%08xh, nFocusMode=%d, pPriority=0x%04x
+0x2219	SetInstantAFMode	Sl	manual, used by the app		
+0x2220	GetInstantAFMode	Gp	manual, used by the app		
+0x2221	SetPreAFMode	Sl	manual, used by the app		
+0x2222	GetPreAFMode	Gp	manual, used by the app		
+0x2223	SetAFIlluminator	Sl	manual, used by the app		hCamera=%08xh, afIlluminatorOnOff=%d
+0x2224	GetAFIlluminator	Gp	manual, used by the app		hCamera=%08xh, pAfIlluminatorOnOff=0x%08x
+0x2225	SetLensISSwitch	Sl	refused by this body (-1)		
+0x2226	GetLensISSwitch	Gp	refused by this body (-1)		
+0x2227	SetISMode	Sl	refused by this body (-1)		
+0x2228	GetISMode	Gp	refused by this body (-1)		
+0x2229	SetLMOMode	Sl	refused by this body (-1)		
+0x2230	GetLMOMode	Gp	refused by this body (-1)		
+0x2233	GetTNumber	Gp	refused by this body (-1)		plTNumber=0x%04x
+0x2234	CapAFMode	Clpp	manual, used by the app		lAngle=%d, pAfMode=0x%04x
+0x2235	CapFocusArea	Cl**	manual, used by the app		
+0x2236	CapAFStatus	Cpp	header only, no manual entry		plNum=0x%08X, plAFStatus=0x%08X
+0x2237	CapShutterPriorityMode	Clpp	manual, used by the app		nFocusMode=%d, pPriority=0x%04x
+0x2238	CapInstantAFMode	Cpp	manual, used by the app		plNum=0x%08X, pInstantAFMode=0x%08X
+0x2239	CapPreAFMode	Cpp	manual, used by the app		plNum=0x%08X, pPreAFOnOff=0x%08X
+0x223A	CapAFIlluminator	Cpp	manual, used by the app		plNum=0x%08X, pAfIlluminatorOnOff=0x%08X
+0x223B	CapISMode	Cpp	refused by this body (-1)		plNum=0x%08X, pISMode=0x%08X
+0x223C	CapLMOMode	Cpp	refused by this body (-1)		plNum=0x%08X, pLMOOnOff=0x%08X
+0x223D	CapEyeAFMode	Cpp	manual, used by the app		plNum=0x%08X, plEyeMode=0x%08X
+0x223E	CapFocusPoints	Cpp	manual, used by the app		plNum=0x%08X, plFocusPoints=0x%08X
+0x223F	CapMFAssistMode	Cpp	manual, used by the app		plNum=0x%08X, plAssistMode=0x%08X
+0x2240	CapFocusCheckMode	Cpp	manual, used by the app		plNum=0x%08X, plFocusCheckMode=0x%08X
+0x2241	CapInterlockAEAFArea	Cpp	manual, used by the app		plNum=0x%08X, plInterlockMode=0x%08X
+0x2242	CapCropMode	Cpp	refused by this body (-1)		plNum=0x%08X, plCropMode=0x%08X
+0x2243	CapFocusLimiterPos	Cpppp	manual, not used		
+0x2244	CapFocusLimiterMode	Cpp	manual, used by the app		plNum=0x%08X, plMode=0x%08X
+0x2245	CapSubjectDetectionMode	Cpp	manual, used by the app		plNum=0x%08X, plMode=0x%08X
+0x2246	SetSubjectDetectionMode	Sl	manual, used by the app		lMode=%d
+0x2247	GetSubjectDetectionMode	Gp	manual, used by the app		plMode=0x%04x
+0x2248	CapAFCCustom	Cpppp	in neither header nor manual		plNum=%d, plMode=%d, pParam_Min=0x%08X, pParam_Max=0x%08X
+0x2249	SetAFCCustom	Sl*	in neither header nor manual		lMode=%d, pParam=0x%08x
+0x224A	GetAFCCustom	Gp*	in neither header nor manual		plMode=0x%08x, pParam=0x%08x
+0x2252	CapFocusLimiter	Cpp	refused by this body (-1)		plNumFocusLimiter=0x%08X, plFocusLimiter=0x%08X
+0x2253	SetFocusLimiter	Sl	refused by this body (-1)		lFocusLimiter=%d
+0x2254	GetFocusLimiter	Gp	refused by this body (-1)		plFocusLimiter=0x%04x
+0x2255	SetEyeAFMode	Sl	manual, used by the app		lEyeMode=%d
+0x2256	GetEyeAFMode	Gp	manual, used by the app		plEyeMode=0x%04x
+0x2257	SetFocusPoints	Sl	manual, used by the app		lFocusPoints=%d
+0x2258	GetFocusPoints	Gp	manual, used by the app		plFocusPoints=0x%04x
+0x2259	CapFocusPos	Cpp	manual, used by the app		hCamera=%08xh, plSizeFocusPosCap=0x%08X, pFocusPosCap=0x%08X
+0x2260	CapLensISSwitch	Cpp	refused by this body (-1)		plNumLensISSwitch=0x%08X, plLensISSwitch=0x%08X
+0x2261	SetMFAssistMode	Sl	manual, used by the app		lAssistMode=%d
+0x2262	GetMFAssistMode	Gp	manual, used by the app		plAssistMode=0x%04x
+0x2263	SetFocusCheckMode	Sl	manual, used by the app		lFocusCheckMode=%d
+0x2264	GetFocusCheckMode	Gp	manual, used by the app		plFocusCheckMode=0x%04x
+0x2265	SetInterlockAEAFArea	Sl	manual, used by the app		lInterlockMode=%d
+0x2266	GetInterlockAEAFArea	Gp	manual, used by the app		plInterlockMode=0x%04x
+0x2267	SetCropMode	Sl	refused by this body (-1)		lCropMode=%d
+0x2268	GetCropMode	Gpp	refused by this body (-1)		plCropMode=0x%08x, plCropModeStatus=0x%08x
+0x2269	GetCropAreaFrameInfo	G*	header only, no manual entry		
+0x226A	SetFocusLimiterPos	Sll	manual, used by the app		lFocusLimiterPos=%d, lMode=%d
+0x226B	GetFocusLimiterIndicator	G*	manual, used by the app		pFocusLimiterIndicator=0x%04x
+0x226C	GetFocusLimiterRange	Gp*	manual, used by the app		plNum=0x%08x, pFocusLimiter=0x%08x
+0x226D	SetFocusLimiterMode	Sl	manual, used by the app		lMode=%d
+0x226E	GetFocusLimiterMode	Gp	manual, used by the app		plMode=0x%04x
+0x226F	CapCropZoom	Cpp	refused by this body (-1)		plNum=0x%08X, plZoom=0x%08X
+0x2270	SetCropZoom	Sl	refused by this body (-1)		
+0x2271	GetCropZoom	Gp	refused by this body (-1)		
+0x2272	CapZoomOperation	Cpppp	manual, not used		plNum=0x%08X, plSetting=0x%08X plNumSpeed=0x%08X, plSpeed=0x%08X
+0x2273	SetZoomOperation	Slll	manual, not used		lSetting=%d, lDirection=%d, lSpeed=%d
+0x2274	CapFocusOperation	Cpppp	manual, not used		plNum=0x%08X, plSetting=0x%08X plNumSpeed=0x%08X, plSpeed=0x%08X
+0x2275	SetFocusOperation	Slll	manual, used by the app		lSetting=%d, lDirection=%d, lSpeed=%d
+0x2276	CapDOFScale	Cpp	in neither header nor manual		
+0x2277	SetDOFScale	Sl	in neither header nor manual		
+0x2278	GetDOFScale	Gp	in neither header nor manual		
+0x2279	CapZoomSpeed	Cpp	manual, not used		
+0x227A	SetZoomSpeed	Sl	manual, not used		
+0x227B	GetZoomSpeed	Gp	manual, not used		
+0x227C	CapFocusSpeed	Cpp	manual, used by the app		
+0x227D	SetFocusSpeed	Sl	manual, used by the app		
+0x227E	GetFocusSpeed	Gp	manual, used by the app		
+0x227F	GetTiltShiftLensStatus	Gppp	manual, not used		plTilt=0x%08X, plShift=0x%08X, plRotate=0x%08X
+0x2280	CapAfZoomMode	Cpp	in neither header nor manual		
+0x2281	SetAfZoomMode	Sl	in neither header nor manual		
+0x2282	GetAfZoomMode	Gp	in neither header nor manual		
+0x2287	CapAFZoneCustom	Cp*	manual, used by the app		plNum=0x%08X, pZoneCustom=0x%08X
+0x2288	SetAFZoneCustom	Sl*	manual, used by the app		
+0x2289	GetAFZoneCustom	Gl*	manual, used by the app		
+0x228A	GetTrackingAfFrameInfo	G*	manual, not used		pFrameInfo=0x%04x
+0x2301	SetWhiteBalanceMode	Sll	refused by this body (-1)		wbMode=%d, colorTemp=%d
+0x2302	GetWhiteBalanceMode	Gpp	refused by this body (-1)		pWbMode=0x%04x, pColorTemp=0x%04x
+0x2304	SetWhiteBalanceTune	Slll	manual, used by the app		tune1=%d, tune2=%d
+0x2305	GetWhiteBalanceTune	Glpp	manual, used by the app		pTune1=0x%08x, tune2=0x%08x
+0x2324	CapWhiteBalanceTune	Clpppp	manual, used by the app		lWBMode= %d, plTuneR_Min=0x%08X, plTuneB_Min=0x%08X, plTuneR_Max=0x%08X, plTuneB_Max=0x%08X
+0x2325	CapFlashSettingMode	Cpp	in neither header nor manual		
+0x2326	SetFlashSettingMode	Sl	in neither header nor manual		
+0x2327	GetFlashSettingMode	Gp	in neither header nor manual		
+0x2328	CapFlashCompensation	Cpp	in neither header nor manual		
+0x232A	SetFlashCompensation	Sl	in neither header nor manual		
+0x232B	GetFlashCompensation	Gp	in neither header nor manual		
+0x232C	CapFlashOutputLevel	Cpp	in neither header nor manual		
+0x232D	SetFlashOutputLevel	Sl	in neither header nor manual		
+0x232E	GetFlashOutputLevel	Gp	in neither header nor manual		
+0x232F	CapFlashTTLMode	Cpp	in neither header nor manual		
+0x2330	SetFlashTTLMode	Sl	in neither header nor manual		
+0x2331	GetFlashTTLMode	Gp	in neither header nor manual		
+0x2332	CapFlashSyncMode	Cpp	in neither header nor manual		
+0x2333	SetFlashSyncMode	Sl	in neither header nor manual		
+0x2334	GetFlashSyncMode	Gp	in neither header nor manual		
+0x2335	CapFlashZoomSetting	Cpp	in neither header nor manual		
+0x2336	SetFlashZoomSetting	Sl	in neither header nor manual		
+0x2337	GetFlashZoomSetting	Gp	in neither header nor manual		
+0x2338	CapFlashDistribution	Cpp	in neither header nor manual		
+0x2339	SetFlashDistribution	Sl	in neither header nor manual		
+0x233A	GetFlashDistribution	Gp	in neither header nor manual		
+0x233B	CapFlashLEDLightSetting	Cpp	in neither header nor manual		
+0x233C	SetFlashLEDLightSetting	Sl	in neither header nor manual		
+0x233D	GetFlashLEDLightSetting	Gp	in neither header nor manual		
+0x233E	CapFlashTimes	Cpp	in neither header nor manual		
+0x233F	SetFlashTimes	Sl	in neither header nor manual		
+0x2340	GetFlashTimes	Gp	in neither header nor manual		
+0x2341	CapFlashHz	Cpp	in neither header nor manual		
+0x2342	SetFlashHz	Sl	in neither header nor manual		
+0x2343	GetFlashHz	Gp	in neither header nor manual		
+0x2344	CapFlashRedEyeRemoval	Cpp	in neither header nor manual		
+0x2345	SetFlashRedEyeRemoval	Sl	in neither header nor manual		
+0x2346	GetFlashRedEyeRemoval	Gp	in neither header nor manual		
+0x2347	CapFlashTTLLockMode	Cpp	in neither header nor manual		
+0x2348	SetFlashTTLLockMode	Sl	in neither header nor manual		
+0x2349	GetFlashTTLLockMode	Gp	in neither header nor manual		
+0x234A	CapFlashCommanderSetting	Cpp	in neither header nor manual		
+0x234B	SetFlashCommanderSetting	Sl	in neither header nor manual		
+0x234C	GetFlashCommanderSetting	Gp	in neither header nor manual		
+0x234D	CapFlashCHSetting	Cpp	in neither header nor manual		
+0x234E	SetFlashCHSetting	Sl	in neither header nor manual		
+0x234F	GetFlashCHSetting	Gp	in neither header nor manual		
+0x2351	SetCustomWBGain	Sl**	in neither header nor manual		lWBMode=%d, pGain=0x%08x, pInfo=0x%08x
+0x2352	GetCustomWBGain	Gl**	in neither header nor manual		lWBMode=%d, pGain=0x%08x, pInfo=0x%08x
+0x2353	SetCustomWBArea	Sl*	header only, no manual entry		lWBMode=%d, pCustomInfo=0x%08x
+0x2354	GetCustomWBArea	Gl*	header only, no manual entry		lWBMode=%d, pCustomInfo=0x%08x
+0x2355	SetMovieCustomWBGain	Sl**	in neither header nor manual		lWBMode=%d, pGain=0x%08x, pInfo=0x%08x
+0x2356	GetMovieCustomWBGain	Gl**	in neither header nor manual		lWBMode=%d, pGain=0x%08x, pInfo=0x%08x
+0x2357	SetMovieCustomWBArea	Sl*	header only, no manual entry		lWBMode=%d, pCustomInfo=0x%08x
+0x2358	GetMovieCustomWBArea	Gl*	header only, no manual entry		lWBMode=%d, pCustomInfo=0x%08x
+0x3021	SetCaptureDelay	Sl	manual, used by the app		captureDelay=%d
+0x3022	GetCaptureDelay	Gp	manual, used by the app		pCaptureDelay=0x%04x
+0x3025	CapCaptureDelay	Cpp	manual, used by the app		plNum=0x%08X, pCaptureDelay=0x%08X
+0x3301	StartLiveView	A	manual, used by the app		
+0x3302	StopLiveView	A	manual, used by the app		hCamera=%08xh
+0x3323	SetLiveViewImageQuality	Sl	manual, used by the app		
+0x3324	GetLiveViewImageQuality	Gp	manual, used by the app		
+0x3325	SetLiveViewImageSize	Sl	manual, used by the app		
+0x3326	GetLiveViewImageSize	Gp	manual, used by the app		
+0x3327	SetThroughImageZoom	Sl	manual, used by the app		setting=%d
+0x3328	GetThroughImageZoom	Gp	manual, used by the app		pSetting=0x%04x
+0x3329	CapLiveViewImageQuality	Cpp	manual, used by the app		plNum=0x%08X, pImageQuality=0x%08X
+0x332A	CapLiveViewImageSize	Cpp	manual, used by the app		plNum=0x%08X, plImageSize=0x%08X
+0x332B	CapThroughImageZoom	Cpp	manual, used by the app		plNum=0x%08X, setting=0x%08X
+0x332C	CapLiveViewStatus	Cpp	manual, not used		plNum=0x%08X, plStatus=0x%08X
+0x332D	GetLiveViewStatus	Gp	manual, used by the app		
+0x332E	CapLiveViewMode	Cpp	header only, no manual entry		
+0x332F	SetLiveViewMode	Sl	header only, no manual entry		
+0x3330	GetLiveViewMode	Gp	header only, no manual entry		
+0x3331	CapLiveViewImageRatio	Cpp	header only, no manual entry		
+0x3332	SetLiveViewImageRatio	Sl	header only, no manual entry		
+0x3333	GetLiveViewImageRatio	Gp	header only, no manual entry		
+0x3334	StartLiveViewLocal	A	in neither header nor manual		
+0x3335	GetLiveViewData	Gp*	in neither header nor manual		plSzie=0x%08X, pData=0x%08X
+0x3501	CapMovieResolution	Cpp	manual, used by the app		
+0x3502	SetMovieResolution	Sl	manual, used by the app		
+0x3503	GetMovieResolution	Gp	manual, used by the app		
+0x3504	CapMovieFrameRate	Cpp	manual, used by the app		
+0x3505	SetMovieFrameRate	Sl	manual, used by the app		
+0x3506	GetMovieFrameRate	Gp	manual, used by the app		
+0x3507	CapMovieBitRate	Cpp	manual, used by the app		
+0x3508	SetMovieBitRate	Sl	manual, used by the app		
+0x3509	GetMovieBitRate	Gp	manual, used by the app		
+0x350A	CapMovieFileFormat	Cpp	manual, used by the app		
+0x350B	SetMovieFileFormat	Sl	manual, used by the app		
+0x350C	GetMovieFileFormat	Gp	manual, used by the app		
+0x350D	CapHighSpeedRecMode	Cpp	manual, used by the app		
+0x350E	SetHighSpeedRecMode	Sl	manual, used by the app		
+0x350F	GetHighSpeedRecMode	Gp	manual, used by the app		
+0x3510	CapHighSpeedRecResolution	Cpp	manual, used by the app		
+0x3511	SetHighSpeedRecResolution	Sl	manual, used by the app		
+0x3512	GetHighSpeedRecResolution	Gp	manual, used by the app		
+0x3513	CapHighSpeedRecFrameRate	Cpp	manual, used by the app		
+0x3514	SetHighSpeedRecFrameRate	Sl	manual, used by the app		
+0x3515	GetHighSpeedRecFrameRate	Gp	manual, used by the app		
+0x3516	CapHighSpeedRecPlayBackFrameRate	Cpp	manual, used by the app		
+0x3517	SetHighSpeedRecPlayBackFrameRate	Sl	manual, used by the app		
+0x3518	GetHighSpeedRecPlayBackFrameRate	Gp	manual, used by the app		
+0x3519	CapMovieMediaRecord	Cpp	manual, used by the app		
+0x351A	SetMovieMediaRecord	Sl	manual, used by the app		
+0x351B	GetMovieMediaRecord	Gp	manual, used by the app		
+0x351C	CapMovieMediaRecordProRes	Cpp	manual, used by the app		
+0x351D	SetMovieMediaRecordProRes	Sl	manual, used by the app		
+0x351E	GetMovieMediaRecordProRes	Gp	manual, used by the app		
+0x351F	CapMovieHDMIOutputRAW	Cpp	manual, used by the app		
+0x3520	SetMovieHDMIOutputRAW	Sl	manual, used by the app		
+0x3521	GetMovieHDMIOutputRAW	Gp	manual, used by the app		
+0x3522	CapMovieHDMIOutputRAWResolution	Cpp	manual, used by the app		
+0x3523	SetMovieHDMIOutputRAWResolution	Sl	manual, used by the app		
+0x3524	GetMovieHDMIOutputRAWResolution	Gp	manual, used by the app		
+0x3525	CapMovieHDMIOutputRAWFrameRate	Cpp	manual, used by the app		
+0x3526	SetMovieHDMIOutputRAWFrameRate	Sl	manual, used by the app		
+0x3527	GetMovieHDMIOutputRAWFrameRate	Gp	manual, used by the app		
+0x3528	CapFlogRecording	Cpp	manual, used by the app		
+0x3529	SetFlogRecording	Sl	manual, used by the app		
+0x352A	GetFlogRecording	Gp	manual, used by the app		
+0x352B	CapMovieCropMagnification	Cpp	manual, used by the app		
+0x352C	SetMovieCropMagnification	Sl	manual, used by the app		
+0x352D	GetMovieCropMagnification	Gp	manual, used by the app		
+0x352E	CapMovieHDMIOutputInfoDisplay	Cpp	manual, used by the app		
+0x352F	SetMovieHDMIOutputInfoDisplay	Sl	manual, used by the app		
+0x3530	GetMovieHDMIOutputInfoDisplay	Gp	manual, used by the app		
+0x3531	CapMovieHDMIRecControl	Cpp	manual, used by the app		
+0x3532	SetMovieHDMIRecControl	Sl	manual, used by the app		
+0x3533	GetMovieHDMIRecControl	Gp	manual, used by the app		
+0x3534	CapMovieIsMode	Cpp	manual, used by the app		
+0x3535	SetMovieIsMode	Sl	manual, used by the app		
+0x3536	GetMovieIsMode	Gp	manual, used by the app		
+0x3537	CapMovieIsModeBoost	Cpp	manual, used by the app		
+0x3538	SetMovieIsModeBoost	Sl	manual, used by the app		
+0x3539	GetMovieIsModeBoost	Gp	manual, used by the app		
+0x353A	CapMovieZebraSetting	Cpp	manual, used by the app		
+0x353B	SetMovieZebraSetting	Sl	manual, used by the app		
+0x353C	GetMovieZebraSetting	Gp	manual, used by the app		
+0x353D	CapMovieZebraLevel	Cpp	manual, used by the app		
+0x353E	SetMovieZebraLevel	Sl	manual, used by the app		
+0x353F	GetMovieZebraLevel	Gp	manual, used by the app		
+0x3540	CapMovieOptimizedControl	Cpp	manual, used by the app		
+0x3541	SetMovieOptimizedControl	Sl	manual, used by the app		
+0x3542	GetMovieOptimizedControl	Gp	manual, used by the app		
+0x3543	CapMovieTallyLight	Cpp	manual, used by the app		
+0x3544	SetMovieTallyLight	Sl	manual, used by the app		
+0x3545	GetMovieTallyLight	Gp	manual, used by the app		
+0x3546	GetMediaEjectWarning	Gp	manual, not used		
+0x3547	CapMovieDataLevelSetting	Cpp	manual, used by the app		plNum=0x%08X, plSetting=0x%08X
+0x3548	SetMovieDataLevelSetting	Sl	manual, used by the app		lSetting=%d
+0x3549	GetMovieDataLevelSetting	Gp	manual, used by the app		plSetting=0x%04x
+0x354A	GetMovieCropMagnificationValue	Gp	manual, not used		plValue=0x%04x
+0x354B	CapMovieFullTimeManual	Cpp	manual, used by the app		plNum=0x%08X, plSetting=0x%08X
+0x354C	SetMovieFullTimeManual	Sl	manual, used by the app		lSetting=%d
+0x354D	GetMovieFullTimeManual	Gp	manual, used by the app		plSetting=0x%04x
+0x354E	CapMovieDigitalZoom	Cpp	manual, used by the app		plNum=0x%08X, plSetting=0x%08X
+0x354F	SetMovieDigitalZoom	Sl	manual, used by the app		lSetting=%d
+0x3550	GetMovieDigitalZoom	Gp	manual, used by the app		plSetting=0x%04x
+0x3551	GetMovieDigitalZoomRange	Gppp	manual, not used		plCurrent=0x%04x plMin=0x%04x plMax=0x%04x
+0x3552	CapMovieImageFormat	Cpp	manual, used by the app		
+0x3553	SetMovieImageFormat	Sl	manual, used by the app		lMode=%d
+0x3554	GetMovieImageFormat	Gp	manual, used by the app		plMode=0x%04x
+0x3555	GetHistogramData	Gp*	manual, not used		
+0x3556	GetFocusMapData	Gp*	manual, not used		plSize=0x%08x, pFocusMapData=0x%08x
+0x3557	CapWaveFormVectorScope	Cpp	manual, used by the app		plNum=0x%08x, plSetting=0x%08x
+0x3558	SetWaveFormVectorScope	Sl	manual, used by the app		plSetting=%d
+0x3559	GetWaveFormVectorScope	Gp	manual, used by the app		plSetting=0x%08x
+0x355A	GetWaveFormData	Gps	manual, not used		plSize=0x%08x, pData=0x%08x
+0x355B	GetVectorScopeData	Gps	manual, not used		plSize=0x%08x, pData=0x%08x
+0x355C	GetParadeData	Gps	manual, not used		plSize=0x%08x, pData=0x%08x
+0x355D	CapRecFrameIndicator	Cpp	manual, used by the app		plNum=0x%08x, plSetting=0x%08x
+0x355E	SetRecFrameIndicator	Sl	manual, used by the app		plSetting=%d
+0x355F	GetRecFrameIndicator	Gp	manual, used by the app		plSetting=0x%08x
+0x3560	CapMovieCaptureDelay	Cpp	manual, used by the app		plNum=0x%08x, plSetting=0x%08x
+0x3561	SetMovieCaptureDelay	Sl	manual, used by the app		plSetting=%d
+0x3562	GetMovieCaptureDelay	Gp	manual, used by the app		plSetting=0x%08x
+0x3563	CapAnamorphicDesqueezeDisplay	Cpp	manual, used by the app		plNum=0x%08x, plSetting=0x%08x
+0x3564	SetAnamorphicDesqueezeDisplay	Sl	manual, used by the app		plSetting=%d
+0x3565	GetAnamorphicDesqueezeDisplay	Gp	manual, used by the app		plSetting=0x%08x
+0x3566	CapAnamorphicMagnification	Cpp	manual, used by the app		plNum=0x%08x, plSetting=0x%08x
+0x3567	SetAnamorphicMagnification	Sl	manual, used by the app		plSetting=%d
+0x3568	GetAnamorphicMagnification	Gp	manual, used by the app		plValue=%d
+0x3569	CapWaveFormSetting	Cpp	manual, used by the app		plNum=0x%08X, plSetting=0x%08X
+0x356A	SetWaveFormSetting	Sl	manual, used by the app		
+0x356B	GetWaveFormSetting	Gp	manual, used by the app		
+0x356C	CapVectorScopeSetting	Cpp	manual, used by the app		
+0x356D	SetVectorScopeSetting	Sl	manual, used by the app		
+0x356E	GetVectorScopeSetting	Gp	manual, used by the app		
+0x356F	CapParadeSettingDisplay	Cpp	manual, used by the app		
+0x3570	SetParadeSettingDisplay	Sl	manual, used by the app		
+0x3571	GetParadeSettingDisplay	Gp	manual, used by the app		
+0x3572	CapParadeSettingColor	Cpp	manual, used by the app		
+0x3573	SetParadeSettingColor	Sl	manual, used by the app		
+0x3574	GetParadeSettingColor	Gp	manual, used by the app		
+0x3575	CapFlogDRangePriority	Cpp	manual, used by the app		
+0x3576	SetFlogDRangePriority	Sl	manual, used by the app		
+0x3577	GetFlogDRangePriority	Gp	manual, used by the app		
+0x3601	CapMovieWhiteBalanceTune	Clpppp	manual, not used		lWBMode= %d, plTuneR_Min=0x%08X, plTuneB_Min=0x%08X, plTuneR_Max=0x%08X, plTuneB_Max=0x%08X
+0x3602	SetMovieWhiteBalanceTune	Slll	manual, not used		lwbMode=%d, ltuneR=%d, ltuneB=%d
+0x3603	GetMovieWhiteBalanceTune	Glpp	manual, not used		lWBMode=%d, plTune1=0x%08x, plTune2=0x%08x
+0x3604	CapMovieFilmSimulationMode	Cpp	manual, used by the app		
+0x3605	SetMovieFilmSimulationMode	Sl	manual, used by the app		
+0x3606	GetMovieFilmSimulationMode	Gp	manual, used by the app		
+0x3607	CapMovieMonochromaticColor	Cpppp	manual, not used		
+0x3608	SetMovieMonochromaticColor	Sll	manual, not used		lWarmCool=%d, lRedGreen=%d
+0x3609	GetMovieMonochromaticColor	Gpp	manual, not used		plWarmCool=0x%08x, plRedGreen=0x%08x
+0x360A	CapMovieHighLightTone	Cpp	manual, used by the app		
+0x360B	SetMovieHighLightTone	Sl	manual, used by the app		
+0x360C	GetMovieHighLightTone	Gp	manual, used by the app		
+0x360D	CapMovieShadowTone	Cpp	manual, used by the app		
+0x360E	SetMovieShadowTone	Sl	manual, used by the app		
+0x360F	GetMovieShadowTone	Gp	manual, used by the app		
+0x3610	CapMovieSharpness	Cpp	manual, used by the app		
+0x3611	SetMovieSharpness	Sl	manual, used by the app		
+0x3612	GetMovieSharpness	Gp	manual, used by the app		
+0x3613	CapMovieColorMode	Cpp	manual, used by the app		
+0x3614	SetMovieColorMode	Sl	manual, used by the app		
+0x3615	GetMovieColorMode	Gp	manual, used by the app		
+0x3616	CapMovieNoiseReduction	Cpp	manual, used by the app		
+0x3617	SetMovieNoiseReduction	Sl	manual, used by the app		
+0x3618	GetMovieNoiseReduction	Gp	manual, used by the app		
+0x3619	CapInterFrameNR	Cpp	manual, used by the app		
+0x361A	SetInterFrameNR	Sl	manual, used by the app		
+0x361B	GetInterFrameNR	Gp	manual, used by the app		
+0x361C	CapMoviePeripheralLightCorrection	Cpp	manual, used by the app		
+0x361D	SetMoviePeripheralLightCorrection	Sl	manual, used by the app		
+0x361E	GetMoviePeripheralLightCorrection	Gp	manual, used by the app		
+0x361F	CapMovieFaceDetectionMode	Cpp	manual, used by the app		
+0x3620	SetMovieFaceDetectionMode	Sl	manual, used by the app		
+0x3621	GetMovieFaceDetectionMode	Gp	manual, used by the app		
+0x3622	CapMovieEyeAFMode	Cpp	manual, used by the app		
+0x3623	SetMovieEyeAFMode	Sl	manual, used by the app		
+0x3624	GetMovieEyeAFMode	Gp	manual, used by the app		
+0x3625	CapMovieSubjectDetectionMode	Cpp	manual, used by the app		
+0x3626	SetMovieSubjectDetectionMode	Sl	manual, used by the app		
+0x3627	GetMovieSubjectDetectionMode	Gp	manual, used by the app		
+0x362B	CapMovieAFCCustom	Cpp	manual, used by the app		pParam_Min=0x%08X, pParam_Max=0x%08X
+0x362C	SetMovieAFCCustom	S*	manual, used by the app		pParam=0x%08x
+0x362D	GetMovieAFCCustom	G*	manual, used by the app		pParam=0x%08x
+0x362E	CapMovieMFAssistMode	Cpp	manual, used by the app		
+0x362F	SetMovieMFAssistMode	Sl	manual, used by the app		
+0x3630	GetMovieMFAssistMode	Gp	manual, used by the app		
+0x3631	CapMovieFocusGuide	Cpp	in neither header nor manual		
+0x3632	GetMovieFocusMeter	Gppp	manual, not used		
+0x3633	CapMovieFocusCheckMode	Cpp	manual, used by the app		
+0x3634	SetMovieFocusCheckMode	Sl	manual, used by the app		
+0x3635	GetMovieFocusCheckMode	Gp	manual, used by the app		
+0x3636	CapMovieFocusCheckLock	Cpp	manual, used by the app		
+0x3637	SetMovieFocusCheckLock	Sl	manual, used by the app		
+0x3638	GetMovieFocusCheckLock	Gp	manual, used by the app		
+0x3639	GetMovieRecordingTime	Gppp	manual, used by the app		
+0x363A	GetMovieRemainingTime	Gppp	manual, used by the app		
+0x3801	GetTimeCode	Gpppp	manual, not used		
+0x3802	CapTimeCodeDisplay	Cpp	manual, used by the app		
+0x3803	SetTimeCodeDisplay	Sl	manual, used by the app		
+0x3804	GetTimeCodeDisplay	Gp	manual, used by the app		
+0x3805	CapTimeCodeStartSetting	Cpp	manual, not used		plNum=0x%08X, plsetting=0x%08X
+0x3806	SetTimeCodeStartSetting	Slllll	manual, not used		lsetting=%d, lHour=%d, lMinute=%d, lSecond=%d, lMilliSecond=%d
+0x3807	CapTimeCodeCountUp	Cpp	manual, used by the app		
+0x3808	SetTimeCodeCountUp	Sl	manual, used by the app		
+0x3809	GetTimeCodeCountUp	Gp	manual, used by the app		
+0x380A	CapTimeCodeDropFrame	Cpp	manual, used by the app		
+0x380B	SetTimeCodeDropFrame	Sl	manual, used by the app		
+0x380C	GetTimeCodeDropFrame	Gp	manual, used by the app		
+0x380D	CapTimeCodeHDMIOutput	Cpp	manual, used by the app		
+0x380E	SetTimeCodeHDMIOutput	Sl	manual, used by the app		
+0x380F	GetTimeCodeHDMIOutput	Gp	manual, used by the app		
+0x3810	GetTimeCodeCurrentValue	Gpppp	manual, used by the app		
+0x3811	CapATOMOSAirGluConnection	Cpp	manual, used by the app		
+0x3812	SetATOMOSAirGluConnection	Sl	manual, used by the app		
+0x3813	GetATOMOSAirGluConnection	Gp	manual, used by the app		
+0x3814	GetTimeCodeStatus	Gp	manual, not used		
+0x3901	CapInternalMicLevel	Cpp	manual, used by the app		
+0x3902	SetInternalMicLevel	Sl	manual, used by the app		
+0x3903	GetInternalMicLevel	Gp	manual, used by the app		
+0x3904	CapInternalMicLevelManual	Cpp	manual, used by the app		
+0x3905	SetInternalMicLevelManual	Sl	manual, used by the app		
+0x3906	GetInternalMicLevelManual	Gp	manual, used by the app		
+0x3907	CapExternalMicLevel	Cpp	manual, used by the app		
+0x3908	SetExternalMicLevel	Sl	manual, used by the app		
+0x3909	GetExternalMicLevel	Gp	manual, used by the app		
+0x390A	CapExternalMicLevelManual	Cpp	manual, used by the app		
+0x390B	SetExternalMicLevelManual	Sl	manual, used by the app		
+0x390C	GetExternalMicLevelManual	Gp	manual, used by the app		
+0x390D	CapMicLevelLimiter	Cpp	manual, used by the app		
+0x390E	SetMicLevelLimiter	Sl	manual, used by the app		
+0x390F	GetMicLevelLimiter	Gp	manual, used by the app		
+0x3910	CapWindFilter	Cpp	manual, used by the app		
+0x3911	SetWindFilter	Sl	manual, used by the app		
+0x3912	GetWindFilter	Gp	manual, used by the app		
+0x3913	CapLowCutFilter	Cpp	manual, used by the app		
+0x3914	SetLowCutFilter	Sl	manual, used by the app		
+0x3915	GetLowCutFilter	Gp	manual, used by the app		
+0x3916	CapHeadPhonesVolume	Cpp	manual, used by the app		
+0x3917	SetHeadPhonesVolume	Sl	manual, used by the app		
+0x3918	GetHeadPhonesVolume	Gp	manual, used by the app		
+0x3919	CapXLRAdapterMicSource	Cpp	manual, used by the app		
+0x391A	SetXLRAdapterMicSource	Sl	manual, used by the app		
+0x391B	GetXLRAdapterMicSource	Gp	manual, used by the app		
+0x391C	CapXLRAdapterMoniteringSource	Cpp	manual, used by the app		
+0x391D	SetXLRAdapterMoniteringSource	Sl	manual, used by the app		
+0x391E	GetXLRAdapterMoniteringSource	Gp	manual, used by the app		
+0x391F	CapXLRAdapterHDMIOutputSource	Cpp	manual, used by the app		
+0x3920	SetXLRAdapterHDMIOutputSource	Sl	manual, used by the app		
+0x3921	GetXLRAdapterHDMIOutputSource	Gp	manual, used by the app		
+0x3922	GetMicLevelIndicator	G*	manual, used by the app		
+0x4001	SetDateTime	Sllllll	manual, used by the app		year=%d, month=%d, day=%d, hour=%d, minute=%d, second=%d
+0x4002	GetDateTime	Gpppppp	manual, used by the app		
+0x4003	SetDateTimeDispFormat	Sl	manual, used by the app		
+0x4004	GetDateTimeDispFormat	Gp	manual, used by the app		
+0x4005	SetWorldClock	Sl	manual, used by the app		worldclock=%d
+0x4006	GetWorldClock	Gp	manual, used by the app		pWorldclock=0x%08x
+0x4007	SetTimeDifference	Sll	manual, used by the app		timeDiffHour=%d, timeDiffMinute=%d
+0x4008	GetTimeDifference	Gpp	manual, used by the app		pTimeDiffHour=0x%08x, pTimeDiffMinute=0x%08x
+0x4009	SetLanguage	Sl	in neither header nor manual	yes	language=%d
+0x4010	GetLanguage	Gp	in neither header nor manual		pLanguage=0x%04x
+0x4011	CapWorldClock	Cpp	manual, used by the app		plNum=0x%08X, plWorldClock=0x%08X
+0x4012	CapTimeDifference	Cpppp	manual, used by the app		plDiffHourNum=0x%08X, plTimeDiffminuteNum=0x%08X plTimeDiffHour=0x%08X, plTimeDiffminute=0x%08X
+0x4013	CapSummerTime	Cpp	manual, used by the app		plNum=0x%08X, plSummerTime=0x%08X
+0x4014	SetSummerTime	Sl	manual, used by the app		summerTime=%d
+0x4015	GetSummerTime	Gp	manual, used by the app		pSummerTime=0x%08x
+0x4016	CapDateTimeDispFormat	Cpp	manual, used by the app		
+0x4017	CapLanguage	Cpp	in neither header nor manual		
+0x4020	ResetSetting	Al	manual, used by the app		hCamera=%08xh, nWhich=%d
+0x4021	SetSilentMode	Sl	refused by this body (-1)		
+0x4022	GetSilentMode	Gp	refused by this body (-1)		
+0x4025	SetBeep	Sl	refused by this body (-1)		setting=%d
+0x4026	GetBeep	Gp	refused by this body (-1)		pSetting=0x%04x
+0x4029	CapResetSetting	Cpp	manual, not used		
+0x4039	SetFunctionLock	Sl	manual, used by the app		setting=%d
+0x4040	GetFunctionLock	Gp	manual, used by the app		pSetting=0x%08x
+0x4041	SetFunctionLockCategory	Slll	manual, not used		category1=%d, category2=%d, category3=%d
+0x4042	GetFunctionLockCategory	Gppp	manual, not used		pCategory1=0x%08x, pCategory2=0x%08x, pCategory3=0x%08x
+0x4043	SetComment	Ss	manual, used by the app		pComment=%s
+0x4044	GetComment	Gs	manual, not used		pComment=0x%08x
+0x4045	SetCopyright	Sss	manual, used by the app		
+0x4046	GetCopyright	Gss	manual, not used		pCopyright1=0x%08x, pCopyright2=0x%08x
+0x4047	SetFilenamePrefix	Sls	manual, used by the app		nWhich=%d, pFilename=%s
+0x4048	GetFilenamePrefix	Gls	manual, not used		nWhich=%d, pFilename=0x%08x
+0x4049	SetPassword	Ss	in neither header nor manual	yes	pPassword=0x%04x
+0x4051	SetDriveMode	Sl	in neither header nor manual		DriveMode=%d
+0x4052	GetDriveMode	Gp	in neither header nor manual		pDriveMode=0x%08x
+0x4055	CheckBatteryInfo	Gpppppppp	manual, used by the app		pBodyBatteryInfo=0x%08x, pGripBatteryInfo=0x%08x, pGripBattery2Info=0x%08x, pBodyBatteryRatio=0x%08x, pGripBatteryRatio=0x%08x, pGripBattery2Ratio=0x%08x, pBodyBattery2Info=0x%08x, pBodyBattery2Ratio=0x%08x
+0x4058	SetFrameNumberSequence	Sl	header only, no manual entry		setting=%d
+0x4059	GetFrameNumberSequence	Gp	header only, no manual entry		pSetting=0x%08x
+0x4060	ResetFrameNumber	A	in neither header nor manual	yes	hCamera=0x%08x
+0x4062	SetUSBMode	Sl	refused by this body (-1)		mode=%d
+0x4063	GetUSBMode	Gp	refused by this body (-1)		pMode=0x%08x
+0x4064	FormatMemoryCard	Al	manual, used by the app		lCategory=%d
+0x4066	SetMediaRecord	Sl	header only, no manual entry		setting=%d
+0x4067	GetMediaRecord	Gp	header only, no manual entry		pSetting=0x%08x
+0x4068	GetMediaCapacity	Glpppp	manual, used by the app		lCategory=%d, pBlankFrameNum=0x%08x, pRemainSectorNum=0x%08x, pSectorSize=0x%08x, pCardSize=0x%08x
+0x4070	GetMediaStatus	Glp	manual, used by the app		lCategory=%d, pStatus=0x%08x
+0x4074	SetFoldernameSuffix	Slsl	header only, no manual entry		lCategory=%d, pFoldername=%s, lFolderNumber=%d
+0x4075	GetFoldernameSuffix	Glsp	header only, no manual entry		lCategory=%d, pFoldername=0x%08x, plFolderNumber=0x%08x
+0x4076	GetFoldernameList	Gppl*	header only, no manual entry		plNumFolders=0x%08x, plCurrentFolderIndex=0x%08x, lPriorityIndex=%d, plFolderInfo=0x%08x
+0x4077	CapFunctionLock	Cpp	manual, used by the app		plNum=0x%08X, pSetting=0x%08X
+0x4078	CapFunctionLockCategory	Cpppppp	manual, not used		plCategory1Num=0x%08X, pulCategory1=0x%08X, plCategory2Num=0x%08X, pulCategory2=0x%08X, plCategory3Num=0x%08X, pulCategory3=0x%08X
+0x4079	CapFormatMemoryCard	Cpp	manual, not used		plNum=0x%08X, plCategory=0x%08X
+0x407A	CapPixelShiftSettings	Cpp	header only, no manual entry		plNum=0x%08X, plSettings=0x%08X
+0x407B	SetPixelShiftSettings	Sl	header only, no manual entry		lSettings=%d
+0x407C	GetPixelShiftSettings	Gp	header only, no manual entry		plSettings=0x%08x
+0x407D	SetArtist	Ss	header only, no manual entry		pArtist=%s
+0x407E	GetArtist	Gs	header only, no manual entry		pArtist=0x%08x
+0x407F	CapFrameNumberSequence	Cpp	header only, no manual entry		
+0x4101	GetShutterCount	Gppp	manual, not used		pShutterCount=0x%08x, pTotalShutterCount=0x%08x, pExchangeCount=0x%08x
+0x4105	FirmwareVersionUp	A*l	in neither header nor manual	yes	pUpdateData=0x%08X, dataSize=%d
+0x4106	LensVersionUp	S*l	in neither header nor manual	yes	pUpdateData=0x%08X, dataSize=%d
+0x4107	CleanSensor	A	in neither header nor manual	yes	hCamera=0x%08x
+0x4108	SetSensorCleanTiming	Sl	refused by this body (-1)		
+0x4109	GetSensorCleanTiming	Gp	refused by this body (-1)		
+0x4113	GetShutterCountEx	Gppp	manual, used by the app		plShutterCount=0x%08x, plTotalShutterCount=0x%08x, plExchangeCount=0x%08x
+0x4114	SetShutterCount	Sll	in neither header nor manual	yes	lShutterCountType=%d, lShutterCount=%d
+0x4115	SetPROMData	Sll*	in neither header nor manual	yes	lOffset=0x%08x, lDataSize=%d
+0x4116	GetPROMData	Gll*	in neither header nor manual		lOffset=0x%08x, lDataSize=%d
+0x4117	CapUSBPowerSupplyCommunication	Cpp	manual, not used		plNum=0x%08X, plSetting=0x%08X
+0x4118	SetUSBPowerSupplyCommunication	Sl	manual, not used		lSetting=%d
+0x4119	GetUSBPowerSupplyCommunication	Gp	manual, not used		plSetting=0x%08X
+0x411A	CapAutoPowerOffSetting	Cpp	manual, used by the app		plNum=0x%08X, plSetting=0x%08X
+0x411B	SetAutoPowerOffSetting	Sl	manual, used by the app		lSetting=%d
+0x411C	GetAutoPowerOffSetting	Gp	manual, used by the app		plSetting=0x%08X
+0x4201	SetPreviewTime	Sl	refused by this body (-1)		previewTime=%d
+0x4202	GetPreviewTime	Gp	refused by this body (-1)		pPreviewTime=0x%08x
+0x4203	SetEVFDispAutoRotate	Sl	refused by this body (-1)		
+0x4204	GetEVFDispAutoRotate	Gp	refused by this body (-1)		
+0x4205	SetExposurePreview	Sl	manual, used by the app		
+0x4206	GetExposurePreview	Gp	manual, used by the app		
+0x4207	SetDispBrightness	Sll	refused by this body (-1)		
+0x4208	GetDispBrightness	Glp	refused by this body (-1)		
+0x4209	SetFrameGuideMode	Sl	manual, used by the app		setting=%d
+0x4210	GetFrameGuideMode	Gp	manual, used by the app		pSetting=0x%08x
+0x4211	SetFrameGuideGridInfo	Sl*	manual, used by the app		
+0x4212	GetFrameGuideGridInfo	Gl*	manual, not used		
+0x4213	SetAutoImageRotation	Sl	refused by this body (-1)		setting=%d
+0x4214	GetAutoImageRotation	Gp	refused by this body (-1)		pSetting=0x%08x
+0x4215	SetFocusScaleUnit	Sl	manual, used by the app		
+0x4216	GetFocusScaleUnit	Gp	manual, used by the app		
+0x4217	SetCustomDispInfo	Sll	manual, not used		
+0x4218	GetCustomDispInfo	Gpp	manual, not used		
+0x4219	SetViewMode	Sll	manual, used by the app		
+0x4220	GetViewMode	Glp	manual, used by the app		
+0x4221	SetDispInfoMode	Sll	refused by this body (-1)		
+0x4222	GetDispInfoMode	Glp	refused by this body (-1)		
+0x4227	SetDispChroma	Sll	refused by this body (-1)		
+0x4228	GetDispChroma	Glp	refused by this body (-1)		
+0x4229	SetCustomAutoPowerOff	Sl	manual, used by the app		lSeconds=%d
+0x4230	GetCustomAutoPowerOff	Gp	manual, used by the app		pSeconds=0x%08x
+0x4231	SetCustomStudioPowerSave	Sl	header only, no manual entry		lSeconds=%d
+0x4232	GetCustomStudioPowerSave	Gp	header only, no manual entry		pSeconds=0x%08x
+0x4233	CapExposurePreview	Cpp	manual, used by the app		plNum=0x%08X, pMode=0x%08X
+0x4234	CapFrameGuideMode	Cpp	manual, used by the app		plNum=0x%08X, pSetting=0x%08X
+0x4235	CapFocusScaleUnit	Cpp	manual, used by the app		plNum=0x%08X, pSetting=0x%08X
+0x4236	CapViewMode	Clpp	manual, used by the app		lCategory=%d, plViewMode=0x%04x
+0x4237	CapCustomAutoPowerOff	Cpp	manual, used by the app		plSeconds_Min=0x%08X, plSeconds_Max=0x%08X
+0x4238	CapCustomStudioPowerSave	Cpp	header only, no manual entry		plSeconds_Min=0x%08X, plSeconds_Max=0x%08X
+0x4239	CapLockButtonMode	Cpp	manual, used by the app		plNum=0x%08X, pSetting=0x%08X
+0x423A	CapCustomDispInfo	Cpppp	manual, not used		plNum1=0x%08X, plNum2=0x%08X, pSetting1=0x%08X, pSetting2=0x%08X
+0x423B	CapMaskSetting	Cpp	manual, used by the app		
+0x423C	SetMaskSetting	Sl	manual, used by the app		
+0x423D	GetMaskSetting	Gp	manual, used by the app		
+0x423E	CapC2PAFunction	Cpp	in neither header nor manual		
+0x423F	SetC2PAFunction	Sl	in neither header nor manual		
+0x4240	GetC2PAFunction	Gp	in neither header nor manual		
+0x4241	SetFunctionButton	Sll	refused by this body (-1)		nFnKey=%d, setting=%d
+0x4242	GetFunctionButton	Glp	refused by this body (-1)		nFnKey=%d, pSetting=0x%08x
+0x4243	SetISODialHn	Sll	refused by this body (-1)		nHnDial=%d, setting=%d
+0x4244	GetISODialHn	Glp	refused by this body (-1)		nHnDial=%d, pSetting=0x%08x
+0x4245	SetLockButtonMode	Sl	manual, used by the app		
+0x4246	GetLockButtonMode	Gp	manual, used by the app		
+0x4247	SetAFLockMode	Sl	refused by this body (-1)		
+0x4248	GetAFLockMode	Gp	refused by this body (-1)		
+0x4249	SetMicJackMode	Sl	refused by this body (-1)		
+0x424A	GetTransparentFrameInfo	G*	manual, used by the app		pFrameInfo=0x%08x
+0x4250	GetMicJackMode	Gp	refused by this body (-1)		
+0x4251	SetAeAfLockKeyAssign	Sl	refused by this body (-1)		setting=%d
+0x4252	GetAeAfLockKeyAssign	Gp	refused by this body (-1)		pSetting=0x%08x
+0x4253	SetCrossKeyAssign	Sl	refused by this body (-1)		setting=%d
+0x4254	GetCrossKeyAssign	Gp	refused by this body (-1)		pSetting=0x%08x
+0x4255	SetBackupSettings	Sl*	in neither header nor manual	yes	lSize=%dx, pBackup=0x%08x
+0x4256	GetBackupSettings	Gp*	in neither header nor manual		plSize=0x%08x, pBackup=0x%08x
+0x4260	TCVersionUp	S*l	in neither header nor manual	yes	pUpdateData=0x%08X, dataSize=%d
+0x4261	AccessoryVersionUp	S*l	in neither header nor manual	yes	pUpdateData=0x%08X, dataSize=%d
+0x4262	SetPerformanceSettings	Sl	manual, used by the app		lSetting=%d
+0x4263	GetPerformanceSettings	Gp	manual, used by the app		plSetting=0x%08x
+0x4264	SetMicLineSetting	Sl	header only, no manual entry		lSetting=%d
+0x4265	GetMicLineSetting	Gp	header only, no manual entry		plSetting=0x%08x
+0x4266	CapPerformanceSettings	Cpp	manual, used by the app		plNum=0x%08X, pSetting=0x%08X
+0x4267	CapMicLineSetting	Cpp	header only, no manual entry		plNum=0x%08X, pSetting=0x%08X
+0x4268	CapFanSetting	Cpp	refused by this body (-1)		plNum=0x%08X, plSetting=0x%08X
+0x4269	SetFanSetting	Sl	refused by this body (-1)		lSetting=%d
+0x426A	GetFanSetting	Gp	refused by this body (-1)		plSetting=0x%04x
+0x426B	CapPlayBackMedia	Cpp	in neither header nor manual		
+0x426C	SetPlayBackMedia	Sl	in neither header nor manual		
+0x426D	GetPlayBackMedia	Gp	in neither header nor manual		
+0x426E	CapElectronicLevelSetting	Cpp	manual, used by the app		
+0x426F	SetElectronicLevelSetting	Sl	manual, used by the app		
+0x4270	GetElectronicLevelSetting	Gp	manual, used by the app		
+0x4271	CapApertureUnit	Cpp	header only, no manual entry		
+0x4272	SetApertureUnit	Sl	header only, no manual entry		
+0x4273	GetApertureUnit	Gp	header only, no manual entry		
+0x4274	GetCameraRotation	Gp	in neither header nor manual		
+0x4275	GetCameraStatus	Gp	in neither header nor manual		
+0x4276	SetCameraOperationLock	Sl	in neither header nor manual		
+0x4277	GetCameraOperationLock	Gp	in neither header nor manual		
+0x4278	GetBodyTemperatureWarning	Gp	manual, used by the app		
+0x4279	GetPlayBackMediaInfo	Glp*	refused by this body (-1)		
+0x427A	GetPlayBackObjectInfo	Gl*	refused by this body (-1)		
+0x427B	GetPlayBackThumb	Gll*	refused by this body (-1)		
+0x427C	GetPlayBackPartialObject	Glllp*	refused by this body (-1)		
+0x427D	CapMovieRecVolume	Cpp	manual, used by the app		
+0x427E	SetMovieRecVolume	Sl	manual, used by the app		
+0x427F	GetMovieRecVolume	Gp	manual, used by the app		
+0x4280	SetCameraPropList	S*	in neither header nor manual	yes	pPropList=0x%08X
+0x4281	GetCameraPropList	G*	in neither header nor manual		pPropList=0x%08X

@@ -1,0 +1,183 @@
+function	route	parameter names from the SDK's own trace
+1PushAF	none	
+CancelS1	none	
+ChangePassword	none	pCurrentPassword=0x%04x, pNewPassword=0x%04x
+ClearAllImage	XSDK_ClearAllImage	hCamera=%08xh
+Close	XSDK_Close	hCamera=%08xh
+DeleteImage	XSDK_DeleteImage	hCamera=%08xh
+Detect	XSDK_Detect	pCount=%08xh
+Exit	XSDK_Exit	
+FocusPosToDistance	none	pulse=%d, zoomPos=%d, pNumerator=0x%08x, pDenominator=0x%08x
+GetAEAFLock	none	pSetting=0x%04x
+GetAEAFLockButton	none	pSetting=0x%04x
+GetAELock	none	pAELock=0x%04x
+GetAEMode	XSDK_GetAEMode	pAeMode=0x%04x
+GetAFOnForMBD200	none	pFunction=0x%04x
+GetAperture	XSDK_GetAperture	pIrisValue=0x%04x
+GetApertureCaps	none	pValidIrisOpen=0x%08X, pValidIrisClose=0x%08X
+GetBCRAppendDelimiter	none	pDelimiter=0x%04x
+GetBKT	none	pBKT=0x%04x
+GetBKTChange	none	pBKTChange=0x%04x
+GetBKTFrame	none	pBKTFrame= 0x%08x
+GetBKTOrder	none	pBKTOrder=0x%04x
+GetBKTSelection	none	pBKTSelection=0x%04x
+GetBKTStep	none	pBKTStep=0x%04x
+GetBufferCapacity	XSDK_GetBufferCapacity	pShootFrameNum=0x%08x, pBlankFrameNum=0x%08x
+GetBuiltinFlashMode	none	pBuiltinFlashMode=0x%04x
+GetBurstInterval	none	pBurstInterval=0x%04x
+GetBurstNumber	none	pBurstNumber=0x%04x
+GetButtonsAndDials	none	pSetting=0x%04x
+GetCenterButton	none	pSetting=0x%04x
+GetCenterPhotometryRange	none	pCenterPhotometryRange=0x%04x
+GetChangedProperty	XSDK_GetChangedProperty	pChangedProperty=0x%08x
+GetCommandDialSetting	none	pRotateDir=0x%08x, pChangeMainSub=0x%08x, pApertureSetting=0x%08x, pMenusAndPlayback=0x%08x
+GetCommentEx	none	pCommentEx=0x%04x
+GetCommentWriteSetting	none	pSetting=0x%04x
+GetCompensationStep	none	pCompensationStep=0x%04x
+GetCustomPreviewTime	none	pPreviewTime=0x%08x
+GetDetectCameraRotation	none	pSetting=0x%04x
+GetDeviceInfo	XSDK_GetDeviceInfo	hCamera=%08xh, pDevInfo=0x%08x
+GetDigitalZoom	none	hCamera=%08xh, pMagnification=0x%08x
+GetDrangeMode	none	pDrangeMode=0x%04x
+GetErrorNumber	XSDK_GetErrorNumber	
+GetExposureBias	XSDK_GetExposureBias	pExposureBias=0x%04x
+GetExposureDelay	none	pExposureDelay=0x%04x
+GetExposureSimpleSet	none	pExposureSimpleSet=0x%04x
+GetExposureStep	none	pExposureStep=0x%04x
+GetFilmSimulationTune	none	mode= %d, item= %d, pTune= 0x%08x
+GetFirmwareFileVersion	XSDK_GetFirmwareFileVersion	pFilePath=%s, pFirmwareVersion=0x%08xh
+GetFirmwareVersion	XSDK_GetFirmwareVersion	
+GetFlashCommanderMode	none	1_1 = 0x%08x, 1_2 = 0x%08x, 2_1 = 0x%08x, 2_2 = 0x%08x, 3_1 = 0x%08x, 3_2 = 0x%08x
+GetFlashManualMode	none	pPower=0x%04x
+GetFlashMode	none	pFlashMode=0x%04x
+GetFlashRepeatingMode	none	pPower= 0x%08x, pRepeatCount= 0x%08x, pRepeatInterval= 0x%08x
+GetFlashShutterLimit	none	pFlashShutterLimit=0x%04x
+GetFlashTuneSpeed	none	pFlashTuneSpeed=0x%04x
+GetFocusLength	none	
+GetIllumination	none	pSetting=0x%04x
+GetLensFNumberList	none	nZoomPos=%d, *pFNumberCount=%d, pFNumberList=0x%08X
+GetLensFocusLengthList	none	nZoomPos=%d, *pFocusLength=0x%08X, p35mmFocusLength=0x%08X
+GetLensInfo	XSDK_GetLensInfo	
+GetLensVersion	XSDK_GetLensVersion	
+GetLensZoomPosCaps	none	pZoomPosMin=0x%08X, pZoomPosMax=0x%08X
+GetLightTune	none	pLightTune=0x%04x
+GetLiveViewBrightness	none	pSetting=0x%04x
+GetLiveViewColorMode	none	pColor=0x%04x
+GetLiveViewCondition	none	hCamera=0x%08x, pLiveViewCondition=0x%08x
+GetLiveViewExposure	none	hCamera=0x%08x, pExposure=0x%08x
+GetLiveViewStyle	none	
+GetLiveViewTuning	none	hCamera=0x%08x, pTuning=0x%08x
+GetLiveViewWhiteBalanceGain	none	
+GetLiveViewWhiteBalanceMode	none	hCamera=0x%08x, pWbMode=0x%08x
+GetMBD200Batteries	none	pType=0x%04x
+GetMeteringMode	XSDK_GetMeteringMode	pAeMode=0x%04x
+GetModelingFlash	none	pModelingFlash=0x%04x
+GetMultiSelectorButton	none	pSetting=0x%04x
+GetNonCPULensData	none	pFocalLength=0x%08x, pMaxAperture=0x%08x
+GetPBSound	none	
+GetPhotometryLevel	none	meteringMode= %d, pPhotometryLevel= 0x%08x
+GetPriorityMode	XSDK_GetPriorityMode	pPriorityMode=0x%08x
+GetPropertyCaps	XSDK_GetPropertyCaps	
+GetPropertyValue	XSDK_GetPropertyValue	
+GetRedEyeCorrectMode	none	
+GetSensitivity	XSDK_GetSensitivity	pAeMode=0x%04x
+GetSerialMode	none	pMode=0x%04x
+GetSerialNo	XSDK_GetSerialNo	devIndex=%d, pSerialNo=0x%08x
+GetShutterSpeed	XSDK_GetShutterSpeed	pShutterSpeed=0x%04x, pExtensionBit=0x%04x
+GetStandbyMode	none	hCamera=%08xh, pStandbyMode=0x%08x
+GetToneMode	none	pToneMode=0x%04x
+GetTotalShotCount	none	hCamera=%08xh
+GetVersionString	XSDK_GetVersionString	pVersionString=0x%08x
+GetVideoMode	none	pMode=0x%08x
+GetVideoOutOnOff	none	
+GetViewfinderWarning	none	pSetting=0x%04x
+GetWhiteBalanceGain	none	hCamera=%08xh, pRGain=%d, pBGain=%d
+GetZoomPosition	none	hCamera=%08xh, pZoomPos=0x%08x
+IncShutterExchangeCount	none	hCamera=0x%08x
+Init	XSDK_Init	
+Open	XSDK_Open	devIndex=%d, phCamera=%08xh, callback=0x%08x, userParam=0x%08x
+PowerOFF	XSDK_PowerOFF	hCamera=0x%08x
+ReadImage	XSDK_ReadImage	hCamera=%08xh, pData=0x%08x, dataSize=%d
+ReadImageInfo	XSDK_ReadImageInfo	
+ReadThumbnail	none	
+ResetShotCount	none	hCamera=%08xh
+ResetTotalShotCount	none	hCamera=%08xh
+SetAEAFLock	none	setting=%d
+SetAEAFLockButton	none	setting=%d
+SetAELock	none	aeLock=%d
+SetAEMode	XSDK_SetAEMode	aeMode=%d
+SetAFOnForMBD200	none	function=%d
+SetAperture	XSDK_SetAperture	irisValue=%d
+SetAutoWhiteBalance	none	pResult = 0x%04x
+SetBCRAppendDelimiter	none	delimiter=%d
+SetBKT	none	bkt=%d
+SetBKTChange	none	bktChange=%d
+SetBKTFrame	none	bktFrame= %d
+SetBKTOrder	none	bktOrder=%d
+SetBKTSelection	none	bktSelection=%d
+SetBKTStep	none	bktStep=%d
+SetBuiltinFlashMode	none	builtinFlashMode=%d
+SetBurstInterval	none	burstInterval=%d
+SetBurstNumber	none	burstNumber=%d
+SetButtonsAndDials	none	setting=%d
+SetCenterButton	none	setting=%d
+SetCenterPhotometryRange	none	centerPhotometryRange=%d
+SetCommandDialSetting	none	rotateDir=%d, changeMainSub=%d, apertureSetting=%d, menusAndPlayback=%d
+SetCommentEx	none	pCommentEx=%s
+SetCommentWriteSetting	none	setting=%d
+SetCompensationStep	none	compensationStep=%d
+SetCustomPreviewTime	none	previewTime=%d
+SetDetectCameraRotation	none	setting=%d
+SetDigitalZoom	none	hCamera=%08xh, magnification=%d
+SetDrangeMode	none	drangeMode=%d
+SetExposureBias	XSDK_SetExposureBias	exposureBias=%d
+SetExposureDelay	none	exposureDelay=%d
+SetExposureSimpleSet	none	exposureSimpleSet=%d
+SetExposureStep	none	exposureStep=%d
+SetFilmSimulationTune	none	mode= %d, item= %d, tune=%d
+SetFlashCommanderMode	none	1_1 = %d, 1_2 = %d, 2_1 = %d, 2_2 = %d, 3_1 = %d, 3_2 = %d, 4 = %d
+SetFlashManualMode	none	power=%d
+SetFlashMode	none	flashMode=%d
+SetFlashRepeatingMode	none	power= %d, repeatCount= %d, repeatInterval= %d
+SetFlashShutterLimit	none	flashShutterLimit=%d
+SetFlashTuneSpeed	none	flashTuneSpeed=%d
+SetFocusLength	none	
+SetIllumination	none	setting=%d
+SetLightTune	none	lightTune=%d
+SetLiveViewBrightness	none	setting=%d
+SetLiveViewColorMode	none	color=%d
+SetLiveViewCondition	none	hCamera=%08xh, liveViewCondition=%d
+SetLiveViewExposure	none	hCamera=%08xh, exposure=%d
+SetLiveViewStyle	none	
+SetLiveViewTuning	none	hCamera=%08xh, tuning=%d
+SetLiveViewWhiteBalanceGain	none	
+SetLiveViewWhiteBalanceMode	none	hCamera=%08xh, wbMode=%d
+SetMBD200Batteries	none	type=%d
+SetMeteringMode	XSDK_SetMeteringMode	meteringMode=%d
+SetModelingFlash	none	modelingFlash=%d
+SetMultiSelectorButton	none	setting=%d
+SetNonCPULensData	none	focalLength=%d, maxAperture=%d
+SetPBSound	none	
+SetPhotometryLevel	none	meteringMode= %d, PhotometryLevel= %d
+SetPriorityMode	XSDK_SetPriorityMode	priorityMode=%d
+SetPropertyValue	XSDK_SetPropertyValue	
+SetRedEyeCorrectMode	none	
+SetSensitivity	XSDK_SetSensitivity	sensitivity=%d
+SetSerialMode	none	mode=%d
+SetShootingTimeout	XSDK_SetShootingTimeout	
+SetShutterSpeed	XSDK_SetShutterSpeed	shutterSpeed=%d, extensionBit=%d
+SetStandbyMode	none	hCamera=%08xh, standbyMode=%d
+SetToneMode	none	toneMode=%d
+SetVideoMode	none	mode=%d
+SetVideoOutOnOff	none	
+SetViewfinderWarning	none	setting=%d
+SetWhiteBalanceGain	none	hCamera=%08xh, rGain=%d, bGain=%d
+Shoot	none	pImageCnt = 0x%04x, pAfStatus = 0x%04x
+ShootS1	none	pAfStatus = 0x%04x
+ShootS2	none	pImageCnt = 0x%04x
+ShootS2toS0	none	
+StartBulb	none	pAfStatus=0x%08X
+StopBulb	none	pImageCnt = 0x%04x
+WriteDeviceName	XSDK_WriteDeviceName	deviceName=%s
+WriteImage	none	hCamera=%08xh, pData=0x%08x, dataSize=%d
+WriteImageInfo	none	
